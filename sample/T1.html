@@ -10,8 +10,8 @@
 <link rel="alternate" type="application/rss+xml" title="egrappler.com" href="feed/index.html">
 <link href="http://fonts.googleapis.com/css?family=Raleway:700,300" rel="stylesheet"
         type="text/css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/prettify.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/prettify.css">
 <style>
 .table100 {
   background-color: #fff;
@@ -127,49 +127,20 @@ th, td {
 }
 </style>
 <script type="text/javascript">
-var idList = [];
-idList[0] = "compo_display";
-idList[1] = "prepa_display";
-idList[2] = "PMGI_display";
-idList[3] = "PPA_display";
-idList[4] = "pattern_display";
-idList[5] = "wetEtch_display";
-idList[6] = "electrode_display";
-
-var homePageIdNb = []
-homePageIdNb[0] = 0;
-
 function toggleMe(a){
 	var e=document.getElementById(a);
 	if(!e)return true;
 	if(e.style.display=="none"){
-		e.style.display="block";
+		e.style.display="block"
 	}
 	else{
-		e.style.display="none";
+		e.style.display="none"
 	}
 	return true;
 }
-
-function hideAllSection(){
-	var e;
-	for(var i = 0; i < idList.length; i ++) {
-		e = document.getElementById(idList[i]);
-		e.style.display="none";
-	}
-}
-
-function homePageInit(){
-	hideAllSection();
-	var e;
-	for(var i = 0; i < homePageIdNb.length; i ++) {
-		e = document.getElementById(idList[homePageIdNb[i]]);
-		e.style.display="block";
-	}
-}
 </script>
 </head>
-<body onload="homePageInit()">
+<body>
 <header>
   <div class="container">
     <h2 class="docs-header"> Elias Gajo - Experiments</h2>
@@ -179,23 +150,23 @@ function homePageInit(){
   <div class="container">
     <ul class="docs-nav" id="menu-left">
       <li><strong>Presentation of the chips</strong></li>
-      <li><a href="#box">Box containing all the chips</a></li>
+      <li><a href="box">Box containing all the chips</a></li>
       <li class="separator"></li>
       <li><strong>Test 1</strong></li>
       <li><a href="#compo">Actual composition</a></li>
       <li><a href="#prepa">Substrate preparation</a></li>
-      <li><a href="#PMGI">PMGI spin coating</a></li>
-      <li><a href="#PPA">PPA spin coating</a></li>
-      <li><a href="#pattern">PPA patterning</a></li>
-      <li><a href="#wetEtch">Wet etching</a></li>
-      <li><a href="#electrode">Electrode deposition</a></li>
+      <li><a href="PMGI">PMGI spin coating</a></li>
+      <li><a href="PPA">PPA spin coating</a></li>
+      <li><a href="pattern">PPA patterning</a></li>
+      <li><a href="wetEtch">Wet etching</a></li>
+      <li><a href="electrode">Electrode deposition</a></li>
     </ul>
     <div class="docs-content">
       <h2> Presentation of the chips</h2>
       <h3 id="box"> Box containing all the chips</h3>
 	  <table style="border-collapse: collapse;">
 		<tr class="presentation">
-			<td><a href="sample/T1.html">test1</a></td><td> test2 </td><td> test3 </td><td> test4 </td><td> - </td><td> - </td>
+			<td><a href="T1.html">test1</a></td><td> test2 </td><td> test3 </td><td> test4 </td><td> - </td><td> - </td>
 		</tr>
 		<tr class="presentation">
 			<td> sample1 </td><td> sample2 </td><td> E4 </td><td> E3 </td><td> E2 </td><td> E1 </td>
@@ -204,12 +175,12 @@ function homePageInit(){
 	  <legend style="text-align: center;">Click on a sample to show the details</legend>
       <hr>
       <h2> Test 1</h2>
-      <p> This <a href="#PPA">chip</a> is used for the lift-off training. We will hence pattern some shapes and test the etching at different times. Then, we will extract
+      <p> This chip is used for the lift-off training. We will hence pattern some shapes and test the etching at different times. Then, we will extract
 	  the best parameters to use for the final device lift-off process.</p>
 	  
-      <h3 id="compo" class="subsection" onclick="return toggleMe('compo_display')"> Actual composition</h3>
+      <h3 id="compo" class="subsection" onclick="return toggleMe('actualCompo')"> Actual composition</h3>
 	  
-	  <div class="table100 ver1" id="compo_display">
+	  <div class="table100 ver1" id="actualCompo">
 		<div class="table100-head">
 			<table>
 				<thead>
@@ -244,16 +215,15 @@ function homePageInit(){
 		</div>
 	</div>
 	  
-      <h3 id="prepa" class="subsection" onclick="return toggleMe('prepa_display')"> Substrate preparation</h3>
-      <ul id="prepa_display">
+      <h3 id="prepa"> Substrate preparation</h3>
+      <ul>
         <li>Diced part of a wafer of Si + 200 nm SiO2</li>
 		<li>Cleaned in acetone during 5 minutes</li>
 		<li>Cleaned in isopropanole during 5 minutes</li>
 		<li>Dried with a N2 gun</li>
       </ul>
       
-      <h3 id="PMGI" class="subsection" onclick="return toggleMe('PMGI_display')"> PMGI spin coating</h3>
-	  <div id="PMGI_display">
+      <h3 id="PMGI"> PMGI spin coating</h3>
 	  <p>Role of this layer : Sacrificial layer for the lift-off.<br>
 	  Steps followed for the fabrication :</p>
       <ul>
@@ -266,10 +236,8 @@ function homePageInit(){
       </ul>
 	  <p>Total thickness of the layer : 180 nm <br>
 	  Thickness measured : No</p>
-	  </div>
      
-      <h3 id="PPA" class="subsection" onclick="return toggleMe('PPA_display')"> PPA spin coating</h3>
-	  <div id="PPA_display">
+      <h3 id="PPA"> PPA spin coating</h3>
 	  <p>Role of this layer : Layer to pattern with t-SPL technique.<br>
 	  Steps followed for the fabrication :</p>
       <ul>
@@ -278,37 +246,30 @@ function homePageInit(){
       </ul>
 	  <p>Total thickness of the layer : 32 nm<br>
 	  Thickness measured : No</p>
-	  </div>
 	  
-      <h3 id="pattern" class="subsection" onclick="return toggleMe('pattern_display')"> PPA patterning</h3>
-	  <div id="pattern_display">
+      <h3 id="pattern"> PPA patterning</h3>
       <p>Todo</p>
-	  </div>
+	  
+      <h3 id="wetEtch"> Wet etching</h3>
+      <p>Todo</p>
 
-      <h3 id="wetEtch" class="subsection" onclick="return toggleMe('wetEtch_display')"> Wet etching</h3>
-	  <div id="wetEtch_display">
+      <h3 id="electrode"> Electrode deposition</h3>
       <p>Todo</p>
-	  </div>
-
-      <h3 id="electrode" class="subsection" onclick="return toggleMe('electrode_display')"> Electrode deposition</h3>
-	  <div id="electrode_display">
-      <p>Todo</p>
-	  </div>
     </div>
   </div>
 </section>
 <footer>
   <div class="container">
-    <img src="image/logo-epfl.png" style="max-width:150px;"></img>
+    <img src="../image/logo-epfl.png" style="max-width:150px;"></img>
   </div>
 </footer>
-<script src="js/jquery.min.js"></script> 
+<script src="../js/jquery.min.js"></script> 
  
 <script type="text/javascript" src="js/prettify/prettify.js"></script> 
 <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=sunburst"></script>
-<script src="js/layout.js"></script>
- <script src="js/jquery.localscroll-1.2.7.js" type="text/javascript"></script>
- <script src="js/jquery.scrollTo-1.4.3.1.js" type="text/javascript"></script>
+<script src="../js/layout.js"></script>
+ <script src="../js/jquery.localscroll-1.2.7.js" type="text/javascript"></script>
+ <script src="../js/jquery.scrollTo-1.4.3.1.js" type="text/javascript"></script>
    <script type="text/javascript" src="../../wp-content/themes/piha/js/top-bar-l1.js" ></script>
   <script type="text/javascript" src="../../wp-content/themes/piha/js/bsa-ads-l1.js" ></script>
   <!--Dynamically creates analytics markup-->
