@@ -197,6 +197,7 @@
 				
 				var chart = am4core.create(div, am4charts.XYChart);
 				chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+				chart.fontSize = 15;
 						
 				chart.data = data;
 				
@@ -206,12 +207,16 @@
 				
 				var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 				valueAxis.title.text = "depth (nm)";
+				valueAxis.min = -50;
+				valueAxis.max = 10; 
+				valueAxis.strictMinMax = true; 
 		
 				var series = chart.series.push(new am4charts.LineSeries());
 				series.dataFields.categoryX = "x";
 				series.dataFields.valueY = "y";
 				//series.tooltipText = "taux de conversion : {valueY.value} %";
 				series.tooltipText = "depth : {valueY} nm";
+				series.dataFields.fontSize = 15;
 				//series.sequencedInterpolation = true;
 				//series.fillOpacity = 0.3;
 				
