@@ -181,6 +181,9 @@
 					e.style.display="block";
 				}
 			}
+			function goToPage(pagePath){
+				window.location= pagePath;
+			}
 		</script>
 		<script src="../js/amcharts4/core.js"></script>
 		<script src="../js/amcharts4/charts.js"></script>
@@ -238,7 +241,7 @@
 			<div class="container">
 				<ul class="docs-nav" id="menu-left">
 					<li><strong>Presentation of the chips</strong></li>
-					<li><a href="#box">Box containing all the chips</a></li>
+					<li><a href="../experiments.html">Box containing all the chips</a></li>
 					<li class="separator"></li>
 					<li><strong>Test 1</strong></li>
 					<li><a href="#compo">Actual composition</a></li>
@@ -250,14 +253,14 @@
 					<li><a href="#electrode">Electrode deposition</a></li>
 				</ul>
 				<div class="docs-content">
-					<h2> Presentation of the chips</h2>
-					<h3 id="box"> Box containing all the chips</h3>
+					<h2>Presentation of the chips</h2>
+					<h3 id="box">Box containing all the chips</h3>
 					<table style="border-collapse: collapse;">
 						<tr class="presentation">
-							<td><a href="T1.html">test1</a></td>
-							<td>test2</td>
-							<td>test3</td>
-							<td>test4</td>
+							<td onclick="goToPage('T1.html')">test1</td>
+							<td onclick="goToPage('T2.html')">test2</td>
+							<td onclick="goToPage('T3.html')">test3</td>
+							<td onclick="goToPage('T4.html')">test4</td>
 							<td>-</td>
 							<td>-</td>
 						</tr>

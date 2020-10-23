@@ -181,6 +181,54 @@
 					e.style.display="block";
 				}
 			}
+			function goToPage(pagePath){
+				window.location= pagePath;
+			}
+		</script>
+		<script src="../js/amcharts4/core.js"></script>
+		<script src="../js/amcharts4/charts.js"></script>
+		<script src="../js/amcharts4/themes/animated.js"></script>
+		<script type="text/javascript">
+		function drawGraph(data, div) {
+						
+			am4core.ready(function() {
+
+				// Themes begin
+				am4core.useTheme(am4themes_animated);
+				// Themes end
+				
+				var chart = am4core.create(div, am4charts.XYChart);
+				chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+				chart.fontSize = 15;
+						
+				chart.data = data;
+				
+				var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+				categoryAxis.dataFields.category = "x";
+				categoryAxis.title.text = "x profile (um)";
+				
+				var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+				valueAxis.title.text = "depth (nm)";
+				valueAxis.tooltip.disabled = true;
+				valueAxis.min = -50;
+				valueAxis.max = 10; 
+				valueAxis.strictMinMax = true; 
+		
+				var series = chart.series.push(new am4charts.LineSeries());
+				series.dataFields.categoryX = "x";
+				series.dataFields.valueY = "y";
+				//series.tooltipText = "taux de conversion : {valueY.value} %";
+				series.tooltipText = "depth : {valueY} nm";
+				series.dataFields.fontSize = 15;
+				//series.sequencedInterpolation = true;
+				//series.fillOpacity = 0.3;
+				
+				chart.cursor = new am4charts.XYCursor();
+				chart.cursor.xAxis = categoryAxis;
+				//chart.scrollbarX = new am4core.Scrollbar();
+			
+			}); // end am4core.ready()
+		}
 		</script>
 	</head>
 	<body onload="homePageInit()">
@@ -193,7 +241,7 @@
 			<div class="container">
 				<ul class="docs-nav" id="menu-left">
 					<li><strong>Presentation of the chips</strong></li>
-					<li><a href="#box">Box containing all the chips</a></li>
+					<li><a href="../experiments.html">Box containing all the chips</a></li>
 					<li class="separator"></li>
 					<li><strong>Test 1</strong></li>
 					<li><a href="#compo">Actual composition</a></li>
@@ -205,14 +253,14 @@
 					<li><a href="#electrode">Electrode deposition</a></li>
 				</ul>
 				<div class="docs-content">
-					<h2> Presentation of the chips</h2>
-					<h3 id="box"> Box containing all the chips</h3>
+					<h2>Presentation of the chips</h2>
+					<h3 id="box">Box containing all the chips</h3>
 					<table style="border-collapse: collapse;">
 						<tr class="presentation">
-							<td><a href="T1.html">test1</a></td>
-							<td>test2</td>
-							<td>test3</td>
-							<td>test4</td>
+							<td onclick="goToPage('T1.html')">test1</td>
+							<td onclick="goToPage('T2.html')">test2</td>
+							<td onclick="goToPage('T3.html')">test3</td>
+							<td onclick="goToPage('T4.html')">test4</td>
 							<td>-</td>
 							<td>-</td>
 						</tr>
@@ -314,14 +362,116 @@
 					<h3 id="pattern" class="subsection" onclick="return toggleMe('pattern_display')"> PPA patterning</h3>
 					<div id="pattern_display">
 						<p>
-							Todo
+							To try to find the best parameters, we need to care about the time of etching as well as the depth of the patterned shapes. To do so, 
+							we will test 3 different thicknesses.
 						</p>
+						<h4>30 nm deep patterns</h5>
+						<div style="position:relative; width:100%; height:450px;">
+							<div style="position:absolute; top:0px; left:0px; width:50%; height:450px;">
+								<p style="text-align:center;"><U>Pattern 1</U></p>
+								<div style="position:absolute; top:50px; left:0px; width:100%; height:400px;">
+									<div style="position:absolute; top:0px; left:0%; width:100%; height:200px;">
+										<img src="../image/img_elias/test1/P1/image.PNG" style="max-width:100%; max-height:200px;"></img>
+									</div>
+									<div id="chart1" style="position:absolute; top:200px; left:0%; width:100%; height:200px;"></div>
+									<script src="../image/img_elias/test1/P1/script.js"></script>
+									<script type="text/javascript">
+									drawGraph(data, "chart1");
+									</script>
+								</div>
+							</div>
+							
+							<div style="position:absolute; top:0px; left:52%; width:48%; height:450px;">
+								<p style="text-align:center;"><U>Pattern 2</U></p>
+								<div style="position:absolute; top:50px; left:0px; width:100%; height:400px;">
+									<div style="position:absolute; top:0px; left:0%; width:100%; height:200px;">
+										<img src="../image/img_elias/test1/P2/image.PNG" style="max-width:100%; max-height:200px;"></img>
+									</div>
+									<div id="chart2" style="position:absolute; top:200px; left:0%; width:100%; height:200px;"></div>
+									<script src="../image/img_elias/test1/P2/script.js"></script>
+									<script type="text/javascript">
+									drawGraph(data, "chart2");
+									</script>
+								</div>
+							</div>
+						</div>
+						
+						<h4>35 nm deep patterns</h5>
+						<div style="position:relative; width:100%; height:450px;">
+							<div style="position:absolute; top:0px; left:0px; width:50%; height:450px;">
+								<p style="text-align:center;"><U>Pattern 3</U></p>
+								<div style="position:absolute; top:50px; left:0px; width:100%; height:400px;">
+									<div style="position:absolute; top:0px; left:0%; width:100%; height:200px;">
+										<img src="../image/img_elias/test1/P3/image.PNG" style="max-width:100%; max-height:200px;"></img>
+									</div>
+									<div id="chart3" style="position:absolute; top:200px; left:0%; width:100%; height:200px;"></div>
+									<script src="../image/img_elias/test1/P3/script.js"></script>
+									<script type="text/javascript">
+									drawGraph(data, "chart3");
+									</script>
+								</div>
+							</div>
+							
+							<div style="position:absolute; top:0px; left:52%; width:48%; height:450px;">
+								<p style="text-align:center;"><U>Pattern 4</U></p>
+								<div style="position:absolute; top:50px; left:0px; width:100%; height:400px;">
+									<div style="position:absolute; top:0px; left:0%; width:100%; height:200px;">
+										<img src="../image/img_elias/test1/P4/image.PNG" style="max-width:100%; max-height:200px;"></img>
+									</div>
+									<div id="chart4" style="position:absolute; top:200px; left:0%; width:100%; height:200px;"></div>
+									<script src="../image/img_elias/test1/P4/script.js"></script>
+									<script type="text/javascript">
+									drawGraph(data, "chart4");
+									</script>
+								</div>
+							</div>
+						</div>
+						
+						<h4>40 nm deep patterns</h5>
+						<div style="position:relative; width:100%; height:450px;">
+							<div style="position:absolute; top:0px; left:0px; width:50%; height:450px;">
+								<p style="text-align:center;"><U>Pattern 5</U></p>
+								<div style="position:absolute; top:50px; left:0px; width:100%; height:400px;">
+									<div style="position:absolute; top:0px; left:0%; width:100%; height:200px;">
+										<img src="../image/img_elias/test1/P5/image.PNG" style="max-width:100%; max-height:200px;"></img>
+									</div>
+									<div id="chart5" style="position:absolute; top:200px; left:0%; width:100%; height:200px;"></div>
+									<script src="../image/img_elias/test1/P5/script.js"></script>
+									<script type="text/javascript">
+									drawGraph(data, "chart5");
+									</script>
+								</div>
+							</div>
+							
+							<div style="position:absolute; top:0px; left:52%; width:48%; height:450px;">
+								<p style="text-align:center;"><U>Pattern 6</U></p>
+								<div style="position:absolute; top:50px; left:0px; width:100%; height:400px;">
+									<div style="position:absolute; top:0px; left:0%; width:100%; height:200px;">
+										<img src="../image/img_elias/test1/P6/image.PNG" style="max-width:100%; max-height:200px;"></img>
+									</div>
+									<div id="chart6" style="position:absolute; top:200px; left:0%; width:100%; height:200px;"></div>
+									<script src="../image/img_elias/test1/P6/script.js"></script>
+									<script type="text/javascript">
+									drawGraph(data, "chart6");
+									</script>
+								</div>
+							</div>
+						</div>
 					</div>
 					<h3 id="wetEtch" class="subsection" onclick="return toggleMe('wetEtch_display')"> Wet etching</h3>
 					<div id="wetEtch_display">
 						<p>
-							Todo
+							Steps followed to etch the PMGI layer :
+							<ul>
+								<li>Sample immersed into a TMAH solution (AZ 726 MIF) during 220 seconds.</li>
+								<li>Sample rinsed into water during 60 seconds.</li>
+								<li>Sample rinsed into IPA during 60 seconds.</li>
+								<li>Dried with the N2 gun.</li>
+							</ul>
 						</p>
+						<img src="../image/img_elias/test1/img2.PNG" style="position:relative; max-width:60%; left:20%;"></img>
+						<legend style="text-align: center;">Optical microscope image of the sample after the wet etching.
+						</legend>
 					</div>
 					<h3 id="electrode" class="subsection" onclick="return toggleMe('electrode_display')"> Electrode deposition</h3>
 					<div id="electrode_display">
