@@ -154,7 +154,6 @@
 			idList[6] = "electrode_display";
 			var homePageIdNb = [];
 			homePageIdNb[0] = 0;
-			homePageIdNb[1] = 4;
 			
 			function toggleMe(a){
 				var e=document.getElementById(a);
@@ -207,6 +206,7 @@
 				
 				var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 				valueAxis.title.text = "depth (nm)";
+				valueAxis.tooltip.disabled = true;
 				valueAxis.min = -50;
 				valueAxis.max = 10; 
 				valueAxis.strictMinMax = true; 
@@ -392,17 +392,83 @@
 								</div>
 							</div>
 						</div>
-						<ul>
-							<li>30 nm</li>
-							<li>35 nm</li>
-							<li>40 nm</li>
-						</ul>
+						
+						<h4>35 nm deep patterns</h5>
+						<div style="position:relative; width:100%; height:450px;">
+							<div style="position:absolute; top:0px; left:0px; width:50%; height:450px;">
+								<p style="text-align:center;"><U>Pattern 3</U></p>
+								<div style="position:absolute; top:50px; left:0px; width:100%; height:400px;">
+									<div style="position:absolute; top:0px; left:0%; width:100%; height:200px;">
+										<img src="../image/img_elias/test1/P3/image.PNG" style="max-width:100%; max-height:200px;"></img>
+									</div>
+									<div id="chart3" style="position:absolute; top:200px; left:0%; width:100%; height:200px;"></div>
+									<script src="../image/img_elias/test1/P3/script.js"></script>
+									<script type="text/javascript">
+									drawGraph(data, "chart3");
+									</script>
+								</div>
+							</div>
+							
+							<div style="position:absolute; top:0px; left:52%; width:48%; height:450px;">
+								<p style="text-align:center;"><U>Pattern 4</U></p>
+								<div style="position:absolute; top:50px; left:0px; width:100%; height:400px;">
+									<div style="position:absolute; top:0px; left:0%; width:100%; height:200px;">
+										<img src="../image/img_elias/test1/P4/image.PNG" style="max-width:100%; max-height:200px;"></img>
+									</div>
+									<div id="chart4" style="position:absolute; top:200px; left:0%; width:100%; height:200px;"></div>
+									<script src="../image/img_elias/test1/P4/script.js"></script>
+									<script type="text/javascript">
+									drawGraph(data, "chart4");
+									</script>
+								</div>
+							</div>
+						</div>
+						
+						<h4>40 nm deep patterns</h5>
+						<div style="position:relative; width:100%; height:450px;">
+							<div style="position:absolute; top:0px; left:0px; width:50%; height:450px;">
+								<p style="text-align:center;"><U>Pattern 5</U></p>
+								<div style="position:absolute; top:50px; left:0px; width:100%; height:400px;">
+									<div style="position:absolute; top:0px; left:0%; width:100%; height:200px;">
+										<img src="../image/img_elias/test1/P5/image.PNG" style="max-width:100%; max-height:200px;"></img>
+									</div>
+									<div id="chart5" style="position:absolute; top:200px; left:0%; width:100%; height:200px;"></div>
+									<script src="../image/img_elias/test1/P5/script.js"></script>
+									<script type="text/javascript">
+									drawGraph(data, "chart5");
+									</script>
+								</div>
+							</div>
+							
+							<div style="position:absolute; top:0px; left:52%; width:48%; height:450px;">
+								<p style="text-align:center;"><U>Pattern 6</U></p>
+								<div style="position:absolute; top:50px; left:0px; width:100%; height:400px;">
+									<div style="position:absolute; top:0px; left:0%; width:100%; height:200px;">
+										<img src="../image/img_elias/test1/P6/image.PNG" style="max-width:100%; max-height:200px;"></img>
+									</div>
+									<div id="chart6" style="position:absolute; top:200px; left:0%; width:100%; height:200px;"></div>
+									<script src="../image/img_elias/test1/P6/script.js"></script>
+									<script type="text/javascript">
+									drawGraph(data, "chart6");
+									</script>
+								</div>
+							</div>
+						</div>
 					</div>
 					<h3 id="wetEtch" class="subsection" onclick="return toggleMe('wetEtch_display')"> Wet etching</h3>
 					<div id="wetEtch_display">
 						<p>
-							Todo
+							Steps followed to etch the PMGI layer :
+							<ul>
+								<li>Sample immersed into a TMAH solution (AZ 726 MIF) during 220 seconds.</li>
+								<li>Sample rinsed into water during 60 seconds.</li>
+								<li>Sample rinsed into IPA during 60 seconds.</li>
+								<li>Dried with the N2 gun.</li>
+							</ul>
 						</p>
+						<img src="../image/img_elias/test1/img2.PNG" style="position:relative; max-width:60%; left:20%;"></img>
+						<legend style="text-align: center;">Optical microscope image of the sample after the wet etching.
+						</legend>
 					</div>
 					<h3 id="electrode" class="subsection" onclick="return toggleMe('electrode_display')"> Electrode deposition</h3>
 					<div id="electrode_display">
