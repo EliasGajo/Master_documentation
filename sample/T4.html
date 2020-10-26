@@ -210,7 +210,7 @@
 				var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 				valueAxis.title.text = "depth (nm)";
 				valueAxis.tooltip.disabled = true;
-				valueAxis.min = -50;
+				valueAxis.min = -70;
 				valueAxis.max = 10; 
 				valueAxis.strictMinMax = true; 
 		
@@ -243,7 +243,7 @@
 					<li><strong>Presentation of the chips</strong></li>
 					<li><a href="../experiments.html">Box containing all the chips</a></li>
 					<li class="separator"></li>
-					<li><strong>Test 1</strong></li>
+					<li><strong>Test 4</strong></li>
 					<li><a href="#compo">Actual composition</a></li>
 					<li><a href="#prepa">Substrate preparation</a></li>
 					<li><a href="#PMGI">PMGI spin coating</a></li>
@@ -277,7 +277,7 @@
 						Click on a sample to show the details
 					</legend>
 					<hr>
-					<h2>Test 1</h2>
+					<h2>Test 4</h2>
 					<p>
 						 This <a href="#PPA">chip</a> is used for the lift-off training. We will hence pattern some shapes and test the etching at different times. Then, we will extract  the best parameters to use for the final device lift-off process.
 					</p>
@@ -308,7 +308,7 @@
 										<td class="column1" style="color:#fff; font-size:18px; font-family:Lato-Bold; line-height:1.4">Thickness</td>
 										<td class="column2">SiO2 : 200 nm</td>
 										<td class="column3">180 nm</td>
-										<td class="column4">32 nm</td>
+										<td class="column4">45 nm</td>
 									</tr>
 								</tbody>
 							</table>
@@ -350,11 +350,11 @@
 							  Steps followed for the fabrication :
 						</p>
 						<ul>
-							<li>Spin coated PPA 3% at 6000 rpm (theoretical thickness : 32 nm)</li>
+							<li>Spin coated PPA 3% at 4000 rpm (theoretical thickness : 45 nm)</li>
 							<li>Chip baked at 90 degrees during 3 minutes</li>
 						</ul>
 						<p>
-							Total thickness of the layer : 32 nm
+							Total thickness of the layer : 45 nm
 							<br>
 							  Thickness measured : No
 						</p>
@@ -365,16 +365,16 @@
 							To try to find the best parameters, we need to care about the time of etching as well as the depth of the patterned shapes. To do so, 
 							we will test 3 different thicknesses.
 						</p>
-						<h4>30 nm deep patterns</h5>
+						<h4>45 nm target depth patterns</h4>
 						<div style="position:relative; width:100%; height:450px;">
 							<div style="position:absolute; top:0px; left:0px; width:50%; height:450px;">
 								<p style="text-align:center;"><U>Pattern 1</U></p>
 								<div style="position:absolute; top:50px; left:0px; width:100%; height:400px;">
 									<div style="position:absolute; top:0px; left:0%; width:100%; height:200px;">
-										<img src="../image/img_elias/test1/P1/image.PNG" style="max-width:100%; max-height:200px;"></img>
+										<img src="../image/img_elias/test4/P1/image.PNG" style="max-width:100%; max-height:200px;"></img>
 									</div>
 									<div id="chart1" style="position:absolute; top:200px; left:0%; width:100%; height:200px;"></div>
-									<script src="../image/img_elias/test1/P1/script.js"></script>
+									<script src="../image/img_elias/test4/P1/script.js"></script>
 									<script type="text/javascript">
 									drawGraph(data, "chart1");
 									</script>
@@ -385,10 +385,10 @@
 								<p style="text-align:center;"><U>Pattern 2</U></p>
 								<div style="position:absolute; top:50px; left:0px; width:100%; height:400px;">
 									<div style="position:absolute; top:0px; left:0%; width:100%; height:200px;">
-										<img src="../image/img_elias/test1/P2/image.PNG" style="max-width:100%; max-height:200px;"></img>
+										<img src="../image/img_elias/test4/P2/image.PNG" style="max-width:100%; max-height:200px;"></img>
 									</div>
 									<div id="chart2" style="position:absolute; top:200px; left:0%; width:100%; height:200px;"></div>
-									<script src="../image/img_elias/test1/P2/script.js"></script>
+									<script src="../image/img_elias/test4/P2/script.js"></script>
 									<script type="text/javascript">
 									drawGraph(data, "chart2");
 									</script>
@@ -396,16 +396,16 @@
 							</div>
 						</div>
 						
-						<h4>35 nm deep patterns</h5>
+						<h4>50 nm target depth patterns</h4>
 						<div style="position:relative; width:100%; height:450px;">
 							<div style="position:absolute; top:0px; left:0px; width:50%; height:450px;">
 								<p style="text-align:center;"><U>Pattern 3</U></p>
 								<div style="position:absolute; top:50px; left:0px; width:100%; height:400px;">
 									<div style="position:absolute; top:0px; left:0%; width:100%; height:200px;">
-										<img src="../image/img_elias/test1/P3/image.PNG" style="max-width:100%; max-height:200px;"></img>
+										<img src="../image/img_elias/test4/P3/image.PNG" style="max-width:100%; max-height:200px;"></img>
 									</div>
 									<div id="chart3" style="position:absolute; top:200px; left:0%; width:100%; height:200px;"></div>
-									<script src="../image/img_elias/test1/P3/script.js"></script>
+									<script src="../image/img_elias/test4/P3/script.js"></script>
 									<script type="text/javascript">
 									drawGraph(data, "chart3");
 									</script>
@@ -416,10 +416,10 @@
 								<p style="text-align:center;"><U>Pattern 4</U></p>
 								<div style="position:absolute; top:50px; left:0px; width:100%; height:400px;">
 									<div style="position:absolute; top:0px; left:0%; width:100%; height:200px;">
-										<img src="../image/img_elias/test1/P4/image.PNG" style="max-width:100%; max-height:200px;"></img>
+										<img src="../image/img_elias/test4/P4/image.PNG" style="max-width:100%; max-height:200px;"></img>
 									</div>
 									<div id="chart4" style="position:absolute; top:200px; left:0%; width:100%; height:200px;"></div>
-									<script src="../image/img_elias/test1/P4/script.js"></script>
+									<script src="../image/img_elias/test4/P4/script.js"></script>
 									<script type="text/javascript">
 									drawGraph(data, "chart4");
 									</script>
@@ -427,16 +427,16 @@
 							</div>
 						</div>
 						
-						<h4>40 nm deep patterns</h5>
+						<h4>60 nm target depth patterns</h4>
 						<div style="position:relative; width:100%; height:450px;">
 							<div style="position:absolute; top:0px; left:0px; width:50%; height:450px;">
 								<p style="text-align:center;"><U>Pattern 5</U></p>
 								<div style="position:absolute; top:50px; left:0px; width:100%; height:400px;">
 									<div style="position:absolute; top:0px; left:0%; width:100%; height:200px;">
-										<img src="../image/img_elias/test1/P5/image.PNG" style="max-width:100%; max-height:200px;"></img>
+										<img src="../image/img_elias/test4/P5/image.PNG" style="max-width:100%; max-height:200px;"></img>
 									</div>
 									<div id="chart5" style="position:absolute; top:200px; left:0%; width:100%; height:200px;"></div>
-									<script src="../image/img_elias/test1/P5/script.js"></script>
+									<script src="../image/img_elias/test4/P5/script.js"></script>
 									<script type="text/javascript">
 									drawGraph(data, "chart5");
 									</script>
@@ -447,29 +447,32 @@
 								<p style="text-align:center;"><U>Pattern 6</U></p>
 								<div style="position:absolute; top:50px; left:0px; width:100%; height:400px;">
 									<div style="position:absolute; top:0px; left:0%; width:100%; height:200px;">
-										<img src="../image/img_elias/test1/P6/image.PNG" style="max-width:100%; max-height:200px;"></img>
+										<img src="../image/img_elias/test4/P6/image.PNG" style="max-width:100%; max-height:200px;"></img>
 									</div>
 									<div id="chart6" style="position:absolute; top:200px; left:0%; width:100%; height:200px;"></div>
-									<script src="../image/img_elias/test1/P6/script.js"></script>
+									<script src="../image/img_elias/test4/P6/script.js"></script>
 									<script type="text/javascript">
 									drawGraph(data, "chart6");
 									</script>
 								</div>
 							</div>
 						</div>
+						<h4>Comments</h4>
+						<p>We see that we have almost the same depth of pattern with all the different target depth. It means that the patterns reach the PMGI and we
+						can confirm that the thickness of the spin coated PPA layer is around 45 nm (as predicted by the theory).</p>
 					</div>
 					<h3 id="wetEtch" class="subsection" onclick="return toggleMe('wetEtch_display')"> Wet etching</h3>
 					<div id="wetEtch_display">
 						<p>
 							Steps followed to etch the PMGI layer :
 							<ul>
-								<li>Sample immersed into a TMAH solution (AZ 726 MIF) during 220 seconds.</li>
+								<li>Sample immersed into a TMAH solution (AZ 726 MIF) during 280 seconds.</li>
 								<li>Sample rinsed into water during 60 seconds.</li>
 								<li>Sample rinsed into IPA during 60 seconds.</li>
 								<li>Dried with the N2 gun.</li>
 							</ul>
 						</p>
-						<img src="../image/img_elias/test1/img2.PNG" style="position:relative; max-width:60%; left:20%;"></img>
+						<img src="../image/img_elias/test4/wetEtch.PNG" style="position:relative; max-width:80%; left:10%;"></img>
 						<legend style="text-align: center;">Optical microscope image of the sample after the wet etching.
 						</legend>
 					</div>
