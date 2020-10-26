@@ -244,7 +244,7 @@
 					<li><a href="../experiments.html">Box containing all the chips</a></li>
 					<li class="separator"></li>
 					<li><strong>Test 1</strong></li>
-					<li><a href="#compo">Actual composition</a></li>
+					<li><a href="#compo">Composition before patterning</a></li>
 					<li><a href="#prepa">Substrate preparation</a></li>
 					<li><a href="#PMGI">PMGI spin coating</a></li>
 					<li><a href="#PPA">PPA spin coating</a></li>
@@ -281,7 +281,7 @@
 					<p>
 						 This <a href="#PPA">chip</a> is used for the lift-off training. We will hence pattern some shapes and test the etching at different times. Then, we will extract  the best parameters to use for the final device lift-off process.
 					</p>
-					<h3 id="compo" class="subsection" onclick="return toggleMe('compo_display')"> Actual composition</h3>
+					<h3 id="compo" class="subsection" onclick="return toggleMe('compo_display')"> Composition before patterning</h3>
 					<div class="table100 ver1" id="compo_display">
 						<div class="table100-head">
 							<table>
@@ -469,15 +469,27 @@
 								<li>Dried with the N2 gun.</li>
 							</ul>
 						</p>
-						<img src="../image/img_elias/test1/img2.PNG" style="position:relative; max-width:60%; left:20%;"></img>
+						<img src="../image/img_elias/test1/img2.PNG" style="position:relative; max-width:80%; left:10%;"></img>
 						<legend style="text-align: center;">Optical microscope image of the sample after the wet etching.
 						</legend>
 					</div>
 					<h3 id="electrode" class="subsection" onclick="return toggleMe('electrode_display')"> Electrode deposition</h3>
 					<div id="electrode_display">
 						<p>
-							Todo
+							To fabricate the electrodes onto the holes induced by the wet etching, we proceed like this (we changed a bit the values):
+							<ul>
+								<li> Evaporation of 40 nm of Cr</li>
+								<li> Evaporation of 20 nm of Au</li>
+							</ul>
+							Then, we remove the PPA and PMGI layers by lift-off.
+							<ul>
+								<li> Sample immersed into a ... solution during around 30 seconds</li>
+								<li> Sonication at a power of 2 W during 1 minute</li>
+							</ul>
 						</p>
+						<img src="../image/img_elias/test1/evap.PNG" style="position:relative; max-width:80%; left:10%;"></img>
+						<legend style="text-align: center;">Optical microscope image of the sample after the evaporation and lift-off.
+						</legend>
 					</div>
 				</div>
 			</div>
