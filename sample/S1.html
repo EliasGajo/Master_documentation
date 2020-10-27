@@ -230,6 +230,60 @@
 			
 			}); // end am4core.ready()
 		}
+		
+		function draw2Graph(data, div) {
+						
+			am4core.ready(function() {
+
+				// Themes begin
+				am4core.useTheme(am4themes_animated);
+				// Themes end
+				
+				var chart = am4core.create(div, am4charts.XYChart);
+				chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+				chart.fontSize = 15;
+						
+				chart.data = data;
+				chart.legend = new am4charts.Legend();
+				chart.legend.useDefaultMarker = true;
+				chart.legend.itemContainers.template.paddingLeft = 50;
+				chart.legend.itemContainers.template.paddingRight = 50;
+				
+				var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+				categoryAxis.dataFields.category = "x";
+				categoryAxis.title.text = "x profile (um)";
+				
+				var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+				valueAxis.title.text = "depth (nm)";
+				valueAxis.tooltip.disabled = true;
+				valueAxis.min = -30;
+				valueAxis.max = 30; 
+				valueAxis.strictMinMax = true; 
+		
+				var series = chart.series.push(new am4charts.LineSeries());
+				series.dataFields.categoryX = "x";
+				series.dataFields.valueY = "y1";
+				series.tooltipText = "before : {valueY} nm";
+				series.name = "before etching";
+				series.stroke = am4core.color("green");
+				series.strokeWidth = 2;
+				series.dataFields.fontSize = 15;
+				
+				var series2 = chart.series.push(new am4charts.LineSeries());
+				series2.dataFields.categoryX = "x";
+				series2.dataFields.valueY = "y2";
+				series2.tooltipText = "after : {valueY} nm";
+				series2.name = "after etching";
+				series2.stroke = am4core.color("red");
+				series2.strokeWidth = 2;
+				series2.dataFields.fontSize = 15;
+				
+				chart.cursor = new am4charts.XYCursor();
+				chart.cursor.xAxis = categoryAxis;
+				//chart.scrollbarX = new am4core.Scrollbar();
+			
+			}); // end am4core.ready()
+		}
 		</script>
 	</head>
 	<body onload="homePageInit()">
@@ -345,7 +399,19 @@
 					<h3 id="pattern" class="subsection" onclick="return toggleMe('pattern_display')"> PPA patterning</h3>
 					<div id="pattern_display">
 						<p>
-							We focus on 3 types of shape : sinusoïdale profile, circular profile, and triangular profile. For each of them, we try 
+							We focus on 3 types of shape : sinusoïdale profile, circular profile, and triangular profile. 
+							<table style="position:relative; width:100%; height:150px;">
+								<tr>
+									<td style="width:30%;">Sinusoïdale profile</td><td style="width:70%;"><img src="../../sin.png" style="max-height:50px; max-width:100%;"></td>
+								</tr>
+								<tr>
+									<td style="width:30%;">Circular profile</td><td style="width:70%;"><img src="../../circle.png" style="max-height:50px; max-width:100%;"></td>
+								</tr>
+								<tr>
+									<td style="width:30%;">Triangular profile</td><td style="width:70%;"><img src="../../tri.png" style="max-height:50px; max-width:100%;"></td>
+								</tr>
+							</table>
+							For each of them, we try 
 							different periods and amplitudes. I present here only the best results for each type of shape.
 						</p>
 						<h4>Sinusoïdale profile</h5>
@@ -466,6 +532,12 @@
 						</legend>
 						<p>As the patterns begin at the top of the PPA layer, we must etch all the PPA to be sure all the patterns are transferred into the SiO2 layer.
 						But to keep a margin to ensure we don't overetch (etch all the SiO2 layer), we choose a time of 1 minute.</p>
+						
+						<div id="chart_etch_1" style="position:relative; top:50px; left:0%; width:100%; height:200px;"></div>
+						<script src="../image/img_elias/sample1/tri/t200/after_etching/script.js"></script>
+						<script type="text/javascript">
+						draw2Graph(data, "chart_etch_1");
+						</script>
 					</div>
 					
 					<h3 id="wetEtch" class="subsection" onclick="return toggleMe('wetEtch_display')"> Wet etching</h3>
