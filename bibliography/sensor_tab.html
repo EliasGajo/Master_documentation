@@ -9,8 +9,8 @@
 		<title>Ana, Elias - Experiments</title>
 		<link rel="alternate" type="application/rss+xml" title="egrappler.com" href="feed/index.html">
 		<link href="http://fonts.googleapis.com/css?family=Raleway:700,300" rel="stylesheet"type="text/css">
-		<link rel="stylesheet" href="css/style.css">
-		<link rel="stylesheet" href="css/prettify.css">
+		<link rel="stylesheet" href="../css/style.css">
+		<link rel="stylesheet" href="../css/prettify.css">
 		<style>
 			.table100
 			{
@@ -26,6 +26,13 @@
 			{
 				font-weight: unset;
 				padding-right: 10px;
+			}
+			
+			.titlebox{
+				float:left;
+				padding:0 5px;
+				margin:-20px 0 0 30px;
+				background:#fff;
 			}
 
 			.presentation td
@@ -146,15 +153,7 @@
 		</style>
 		<script type="text/javascript">
 			var idList = [];
-			idList[0] = "compo_display";
-			idList[1] = "prepa_display";
-			idList[2] = "PMGI_display";
-			idList[3] = "PPA_display";
-			idList[4] = "pattern_display";
-			idList[5] = "wetEtch_display";
-			idList[6] = "electrode_display";
 			var homePageIdNb = [];
-			homePageIdNb[0] = 0;
 			
 			function toggleMe(a){
 				var e=document.getElementById(a);
@@ -196,68 +195,61 @@
 		<section>
 			<div class="container">
 				<ul class="docs-nav" id="menu-left">
-					<li><strong><a href="#box" style="color:#000000">Home page</a></strong></li>
+					<li><a href="../experiments.html"><strong>Home page</strong></a></li>
 					<li class="separator"></li>
-					<li><strong>Chips</strong>
-						<ul>
-							<li><strong><a href="sample/T1.html">Test 1</a></strong></li>
-							<li><strong><a href="sample/T2.html">Test 2</a></strong></li>
-							<li><strong><a href="sample/T3.html">Test 3</a></strong></li>
-							<li><strong><a href="sample/T4.html">Test 4</a></strong></li>
-							<li><strong><a href="sample/S1.html">Sample 1</a></strong></li>
-							<li><strong><a href="sample/S2.html">Sample 2</a></strong></li>
-						</ul>
-					</li>
-					<li><a href="bibliography/sensor_tab.html" style="color:#000000"><strong>Bibliography search</strong></a></li>
+					<li><strong>Bibliography search</strong></li>
+					<li><a href="#sensor_tab">2D sensors in literature</a></li>
 				</ul>
 				<div class="docs-content">
-					<h2>Presentation of the chips</h2>
-					<p>we have 3 different type of chips in the experiment box. 
-						<ul>
-							<li>The chips called "test" are used to test the lift-off process and to determine 
-							the best set of parameters for the final chips.</li>
-							<li>The chips called "sample" will contain the final gas sensors.</li>
-							<li>The chips called "E" contain the transferred flakes of 2D material.</li>
-						</ul>
-					  </p>
-					<h3 id="box">Box containing all the chips</h3>
-					<table style="border-collapse: collapse;">
-						<tr class="presentation">
-							<td onclick="goToPage('sample/T1.html')">test1</td>
-							<td onclick="goToPage('sample/T2.html')">test2</td>
-							<td onclick="goToPage('sample/T3.html')">test3</td>
-							<td onclick="goToPage('sample/T4.html')">test4</td>
-							<td>-</td>
-							<td>-</td>
-						</tr>
-						<tr class="presentation">
-							<td onclick="goToPage('sample/S1.html')">sample1</td>
-							<td onclick="goToPage('sample/S2.html')">sample2</td>
-							<td>E4</td>
-							<td>E3</td>
-							<td>E2</td>
-							<td>E1</td>
-						</tr>
-					</table>
-					<legend style="text-align: center;">
-						Click on a sample to show the details
-					</legend>
-					<hr>
+					<h2>Bibliography search</h2>
+					<p>
+						 Todo
+					</p>
+					<h3 id="sensor_tab" class="subsection" onclick="return toggleMe('sensor_tab_display')">2D sensors in literature</h3>
+					<div class="table100 ver1" id="sensor_tab_display">
+						<div class="table100-head">
+							<table>
+								<thead>
+									<tr>
+										<th class="column1">-</th>
+										<th class="column2">Substrate</th>
+										<th class="column3">Layer 1</th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+						<div class="table100-body">
+							<table>
+								<tbody>
+									<tr>
+										<td class="column1" style="color:#fff; font-size:18px; font-family:Lato-Bold; line-height:1.4">Material</td>
+										<td class="column2">Si + SiO2</td>
+										<td class="column3">PPA</td>
+									</tr>
+									<tr>
+										<td class="column1" style="color:#fff; font-size:18px; font-family:Lato-Bold; line-height:1.4">Thickness</td>
+										<td class="column2">SiO2 : 200 nm</td>
+										<td class="column3">100 nm</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
 				</div>
 			</div>
 		</section>
 		<footer>
 			<div class="container">
-				<img src="image/logo-epfl.png" style="max-width:150px;">
+				<img src="../image/logo-epfl.png" style="max-width:150px;">
 				</img>
 			</div>
 		</footer>
-		<script src="js/jquery.min.js"></script>
-		<script type="text/javascript" src="js/prettify/prettify.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/prettify/prettify.js"></script>
 		<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?lang=css&skin=sunburst"></script>
-		<script src="js/layout.js"></script>
-		<script src="js/jquery.localscroll-1.2.7.js" type="text/javascript"></script>
-		<script src="js/jquery.scrollTo-1.4.3.1.js" type="text/javascript"></script>
+		<script src="../js/layout.js"></script>
+		<script src="../js/jquery.localscroll-1.2.7.js" type="text/javascript"></script>
+		<script src="../js/jquery.scrollTo-1.4.3.1.js" type="text/javascript"></script>
 		<script type="text/javascript" src="../../wp-content/themes/piha/js/top-bar-l1.js" ></script>
 		<script type="text/javascript" src="../../wp-content/themes/piha/js/bsa-ads-l1.js" ></script>
 		<!--Dynamically creates analytics markup-->
