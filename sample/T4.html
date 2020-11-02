@@ -153,6 +153,7 @@
 			idList[4] = "pattern_display";
 			idList[5] = "wetEtch_display";
 			idList[6] = "electrode_display";
+			idList[7] = "discussion_display";
 			var homePageIdNb = [];
 			homePageIdNb[0] = 0;
 			
@@ -252,6 +253,7 @@
 					<li><a href="#pattern">PPA patterning</a></li>
 					<li><a href="#wetEtch">Wet etching</a></li>
 					<li><a href="#electrode">Electrode deposition</a></li>
+					<li><a href="#discussion">Discussion</a></li>
 				</ul>
 				<div class="docs-content">
 					<h2>Presentation of the chips</h2>
@@ -480,20 +482,26 @@
 					<h3 id="electrode" class="subsection" onclick="return toggleMe('electrode_display')"> Electrode deposition</h3>
 					<div id="electrode_display">
 						<p>
-							To fabricate the electrodes onto the holes induced by the wet etching, we proceed like this (we changed a bit the values):
-							<ul>
-								<li> Evaporation of 40 nm of Cr</li>
-								<li> Evaporation of 20 nm of Au</li>
-							</ul>
+							To fabricate the electrodes onto the holes induced by the wet etching, we first evaporate around 40 nm of Cr with the evaporator of the lab.
 							Then, we remove the PPA and PMGI layers by lift-off.
 							<ul>
-								<li> Sample immersed into a ... solution during around 30 seconds</li>
+								<li> Sample immersed into the Remover 1165 solution during around 30 seconds</li>
 								<li> Sonication at a power of 2 W during 1 minute</li>
 							</ul>
 						</p>
 						<img src="../image/img_elias/test4/evap.PNG" style="position:relative; max-width:80%; left:10%;"></img>
 						<legend style="text-align: center;">Optical microscope image of the sample after the evaporation and lift-off.
 						</legend>
+					</div>
+					
+					<h3 id="discussion" class="subsection" onclick="return toggleMe('discussion_display')"> Discussion</h3>
+					<div id="discussion_display">
+						<p>
+							The t-SPL patterns are almost the same, regardless of the target depth (as for test 3). Now, we are sure the etching time is enough as all the 
+							holes in each patterns are visible (and have a correct shape) after the evaporation and lift-off. The shapes of the deposited metal (by evaporation)
+							seems to corresponds well to the patterned shapes with the t-SPL, hence we probably not overetch (or at least, we overetch only a little bit). We can
+							verify that by comparing the AFM results of the patterned shapes and the evaporated shapes.
+						</p>
 					</div>
 				</div>
 			</div>
