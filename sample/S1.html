@@ -158,8 +158,7 @@
 			idList[2] = "PPA_display";
 			idList[3] = "pattern_display";
 			idList[4] = "pat_trans_display";
-			idList[5] = "wetEtch_display";
-			idList[6] = "electrode_display";
+			idList[5] = "best_result_display";
 			var homePageIdNb = [];
 			homePageIdNb[0] = 0;
 			
@@ -211,35 +210,36 @@
 				chart.cursor = new am4charts.XYCursor();
 				chart.data = data;
 				
-				/*var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+				var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 				categoryAxis.dataFields.category = "x";
 				categoryAxis.scale = 1;
-				categoryAxis.title.text = "x profile (um)";*/
+				categoryAxis.title.text = "x profile (um)";
+				var axisToolTip = categoryAxis.tooltip;
+				axisToolTip.background.fill = am4core.color("#07BEB8");
+				axisToolTip.dy = 5;
 				
-				var categoryAxis = chart.xAxes.push(new am4charts.ValueAxis());
+				/*var categoryAxis = chart.xAxes.push(new am4charts.ValueAxis());
 				//categoryAxis.dataFields.value = "x";
 				//categoryAxis.scale = 1;
 				categoryAxis.title.text = "x profile (um)";
 				categoryAxis.extraTooltipPrecision = 1;
 				var axisToolTip = categoryAxis.tooltip;
 				axisToolTip.background.fill = am4core.color("#07BEB8");
-				axisToolTip.dy = 5;
+				axisToolTip.dy = 5;*/
 				
 				var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 				valueAxis.title.text = "depth (nm)";
-				//valueAxis.tooltip.disabled = true;
+				valueAxis.tooltip.disabled = true;
 				valueAxis.min = -50;
 				valueAxis.max = 10; 
 				valueAxis.strictMinMax = true; 
 				//valueAxis.extraTooltipPrecision = 1;
 		
 				var series = chart.series.push(new am4charts.LineSeries());
-				series.dataFields.valueX = "x";
+				series.dataFields.categoryX = "x";
 				series.dataFields.valueY = "y";
 				series.tooltip.label.fill = am4core.color("#f00");
-				//series.tooltipText = "taux de conversion : {valueY.value} %";
-				//series.tooltipText = "depth : {valueY} nm";
-				series.tooltipText = "depth : nm";
+				series.tooltipText = "depth : {valueY} nm";
 				series.dataFields.fontSize = 15;
 				//series.sequencedInterpolation = true;
 				//series.fillOpacity = 0.3;
@@ -327,6 +327,7 @@
 					<li><a href="#PPA">PPA spin coating</a></li>
 					<li><a href="#pattern">PPA patterning</a></li>
 					<li><a href="#pat_trans">Pattern transfer</a></li>
+					<li><a href="#best_result">Best result</a></li>
 				</ul>
 				<div class="docs-content">
 					<h2>Presentation of the chips</h2>
@@ -623,6 +624,17 @@
 						<p>The plasma solution was supposed to etch more the SiO2 than the PPA, but the results show the inverse. The etch rate of the CHF3/SF6 plasma
 						into the PPA was extracted from the Yiulya article (I don't know how to write it haha) and seems to be false for our PPA layer. Then, we have to
 						look for another plasma solution if we want to increase the pattern amplitudes during the transfer into the SiO2 (maybe I can see that with the CMi staff ?).</p>
+					</div>
+					
+					<h3 id="best_result" class="subsection" onclick="return toggleMe('best_result_display')"> Best result</h3>
+					<div id="best_result_display">
+						<p>The best transferred patterns are the triangular ones. The smaller the period, the better it is for our application, so we only detail for the 
+						smaller one in this section.</p>
+						<div id="scaled_graph" style="position:relative; top:0px; left:0px; width:800px; height:100px">
+							<p style="text-align:center;"><U>Real scale surface of the triangular 200 nm patterns</U></p>
+							<img src="../image/img_elias/sample1/tri/t200/after_etching/scale.png"></img>
+						</div>
+						<p>The amplitude of the pattern hasn't been amplified during the transfering into the SiO2 layer, hence the aspect ratio is very short. Indeed, the aspect ratio (amplitude / period) is around 0.06.</p>
 					</div>
 				</div>
 			</div>
