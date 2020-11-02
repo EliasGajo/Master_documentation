@@ -153,6 +153,7 @@
 			idList[4] = "pattern_display";
 			idList[5] = "wetEtch_display";
 			idList[6] = "electrode_display";
+			idList[7] = "discussion_display";
 			var homePageIdNb = [];
 			homePageIdNb[0] = 0;
 			
@@ -252,6 +253,7 @@
 					<li><a href="#pattern">PPA patterning</a></li>
 					<li><a href="#wetEtch">Wet etching</a></li>
 					<li><a href="#electrode">Electrode deposition</a></li>
+					<li><a href="#discussion">Discussion</a></li>
 				</ul>
 				<div class="docs-content">
 					<h2>Presentation of the chips</h2>
@@ -266,7 +268,7 @@
 							<td>-</td>
 						</tr>
 						<tr class="presentation">
-							<td>sample1</td>
+							<td onclick="goToPage('S1.html')">sample1</td>
 							<td>sample2</td>
 							<td>E4</td>
 							<td>E3</td>
@@ -492,6 +494,16 @@
 						<img src="../image/img_elias/test3/evap.PNG" style="position:relative; max-width:80%; left:10%;"></img>
 						<legend style="text-align: center;">Optical microscope image of the sample after the evaporation and lift-off.
 						</legend>
+					</div>
+					
+					<h3 id="discussion" class="subsection" onclick="return toggleMe('discussion_display')"> Discussion</h3>
+					<div id="discussion_display">
+						<p>
+							The t-SPL patterns are almost the same, regardless of the target depth. We notice only a little difference in depth between P1 and P3 and almost
+							no difference between P3 and P5. This finding allows us to ensure that the holes go through all the PPA layer (for P3 and P5). That is also why we see almost no difference
+							between the patterns after the wet etching. The results after the evaporation and lift-off are nice. In P2, one hole doesn't appear so we probably don't 
+							overetch. Let's see what happen when we increase again the etching time (test 4).
+						</p>
 					</div>
 				</div>
 			</div>

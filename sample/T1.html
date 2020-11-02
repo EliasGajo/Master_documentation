@@ -153,6 +153,7 @@
 			idList[4] = "pattern_display";
 			idList[5] = "wetEtch_display";
 			idList[6] = "electrode_display";
+			idList[7] = "discussion_display";
 			var homePageIdNb = [];
 			homePageIdNb[0] = 0;
 			
@@ -252,6 +253,7 @@
 					<li><a href="#pattern">PPA patterning</a></li>
 					<li><a href="#wetEtch">Wet etching</a></li>
 					<li><a href="#electrode">Electrode deposition</a></li>
+					<li><a href="#discussion">Discussion</a></li>
 				</ul>
 				<div class="docs-content">
 					<h2>Presentation of the chips</h2>
@@ -266,7 +268,7 @@
 							<td>-</td>
 						</tr>
 						<tr class="presentation">
-							<td>sample1</td>
+							<td onclick="goToPage('S1.html')">sample1</td>
 							<td>sample2</td>
 							<td>E4</td>
 							<td>E3</td>
@@ -491,6 +493,16 @@
 						<img src="../image/img_elias/test1/evap.PNG" style="position:relative; max-width:80%; left:10%;"></img>
 						<legend style="text-align: center;">Optical microscope image of the sample after the evaporation and lift-off.
 						</legend>
+					</div>
+					
+					<h3 id="discussion" class="subsection" onclick="return toggleMe('discussion_display')"> Discussion</h3>
+					<div id="discussion_display">
+						<p>
+							The results show that the deeper the patterns are, the better the etching is. Indeed, if we consider the pattern5, we can see that after the t-SPL
+							patterning, all the holes are deeper than 32 nm (the theoretical thickness of the PPA), hence the wet etching works well. We also see that the time 
+							of etching is sufficient so that we can see the holes appear, but the evaporation and lift-off lack precision. We will try to improve that by increasing 
+							a bit the etching time on the other test samples (test2, test3, and test4).
+						</p>
 					</div>
 				</div>
 			</div>

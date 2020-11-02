@@ -208,32 +208,45 @@
 				var chart = am4core.create(div, am4charts.XYChart);
 				chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 				chart.fontSize = 15;
-						
+				chart.cursor = new am4charts.XYCursor();
 				chart.data = data;
 				
-				var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
+				/*var categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
 				categoryAxis.dataFields.category = "x";
+				categoryAxis.scale = 1;
+				categoryAxis.title.text = "x profile (um)";*/
+				
+				var categoryAxis = chart.xAxes.push(new am4charts.ValueAxis());
+				//categoryAxis.dataFields.value = "x";
+				//categoryAxis.scale = 1;
 				categoryAxis.title.text = "x profile (um)";
+				categoryAxis.extraTooltipPrecision = 1;
+				var axisToolTip = categoryAxis.tooltip;
+				axisToolTip.background.fill = am4core.color("#07BEB8");
+				axisToolTip.dy = 5;
 				
 				var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 				valueAxis.title.text = "depth (nm)";
-				valueAxis.tooltip.disabled = true;
+				//valueAxis.tooltip.disabled = true;
 				valueAxis.min = -50;
 				valueAxis.max = 10; 
 				valueAxis.strictMinMax = true; 
+				//valueAxis.extraTooltipPrecision = 1;
 		
 				var series = chart.series.push(new am4charts.LineSeries());
-				series.dataFields.categoryX = "x";
+				series.dataFields.valueX = "x";
 				series.dataFields.valueY = "y";
+				series.tooltip.label.fill = am4core.color("#f00");
 				//series.tooltipText = "taux de conversion : {valueY.value} %";
-				series.tooltipText = "depth : {valueY} nm";
+				//series.tooltipText = "depth : {valueY} nm";
+				series.tooltipText = "depth : nm";
 				series.dataFields.fontSize = 15;
 				//series.sequencedInterpolation = true;
 				//series.fillOpacity = 0.3;
 				
 				chart.cursor = new am4charts.XYCursor();
 				chart.cursor.xAxis = categoryAxis;
-				//chart.scrollbarX = new am4core.Scrollbar();
+				chart.scrollbarX = new am4core.Scrollbar();
 			
 			}); // end am4core.ready()
 		}
@@ -264,8 +277,9 @@
 				var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 				valueAxis.title.text = "depth (nm)";
 				valueAxis.tooltip.disabled = true;
-				valueAxis.min = -30;
+				valueAxis.min = -35;
 				valueAxis.max = 30; 
+				valueAxis.scale = 1;
 				valueAxis.strictMinMax = true; 
 				valueAxis.title.fontWeight = "bold";
 		
@@ -307,14 +321,12 @@
 					<li><strong>Presentation of the chips</strong></li>
 					<li><a href="../experiments.html">Box containing all the chips</a></li>
 					<li class="separator"></li>
-					<li><strong>Test 1</strong></li>
+					<li><strong>Sample 1</strong></li>
 					<li><a href="#compo">Composition before patterning</a></li>
 					<li><a href="#prepa">Substrate preparation</a></li>
 					<li><a href="#PPA">PPA spin coating</a></li>
 					<li><a href="#pattern">PPA patterning</a></li>
 					<li><a href="#pat_trans">Pattern transfer</a></li>
-					<li><a href="#wetEtch">Wet etching</a></li>
-					<li><a href="#electrode">Electrode deposition</a></li>
 				</ul>
 				<div class="docs-content">
 					<h2>Presentation of the chips</h2>
@@ -329,7 +341,7 @@
 							<td>-</td>
 						</tr>
 						<tr class="presentation">
-							<td>sample1</td>
+							<td onclick="goToPage('S1.html')">sample1</td>
 							<td>sample2</td>
 							<td>E4</td>
 							<td>E3</td>
@@ -411,13 +423,13 @@
 							We focus on 3 types of shape : sinusoïdale profile, circular profile, and triangular profile. 
 							<table style="position:relative; width:100%; height:150px;">
 								<tr>
-									<td style="width:30%;">Sinusoïdale profile</td><td style="width:70%;"><img src="../../sin.png" style="max-height:50px; max-width:100%;"></td>
+									<td style="width:30%;">Sinusoïdale profile</td><td style="width:70%;"><img src="../image/sin.png" style="max-height:50px; max-width:100%;"></td>
 								</tr>
 								<tr>
-									<td style="width:30%;">Circular profile</td><td style="width:70%;"><img src="../../circle.png" style="max-height:50px; max-width:100%;"></td>
+									<td style="width:30%;">Circular profile</td><td style="width:70%;"><img src="../image/circle.png" style="max-height:50px; max-width:100%;"></td>
 								</tr>
 								<tr>
-									<td style="width:30%;">Triangular profile</td><td style="width:70%;"><img src="../../tri.png" style="max-height:50px; max-width:100%;"></td>
+									<td style="width:30%;">Triangular profile</td><td style="width:70%;"><img src="../image/tri.png" style="max-height:50px; max-width:100%;"></td>
 								</tr>
 							</table>
 							For each of them, we try 
@@ -542,68 +554,75 @@
 						<p>As the patterns begin at the top of the PPA layer, we must etch all the PPA to be sure all the patterns are transferred into the SiO2 layer.
 						But to keep a margin to ensure we don't overetch (etch all the SiO2 layer), we choose a time of 1 minute.</p>
 						
-						<div style="position:relative; top:0px; left:0px; height:540px; width:100%; border:2px solid black; border-radius: 10px;">
-							<div class="titlebox"><h4>Circular patterns</h4></div>
-							<div style="position:absolute; top:0px; left:0px; height:320px; width:100%;">
-								<div style="position:absolute; top:0px; left:0px; height:20px; width:100%;">
-									<h4 style="text-align:center">220 nm period</h4>
+						<div style="position:relative; top:0px; left:0px; height:1410px; width:100%;">
+							<div style="position:absolute; top:0px; left:0px; height:270px; width:100%; border:2px solid black; border-radius: 10px;">
+								<div class="titlebox"><h4>Sinusoïdale patterns</h4></div>
+								<div style="position:absolute; top:0px; left:0px; height:270px; width:100%;">
+									<div style="position:absolute; top:0px; left:0px; height:20px; width:100%;">
+										<h4 style="text-align:center">225 nm period</h4>
+									</div>
+									<div id="chart_etch_1" style="position:absolute; top:20px; left:2%; width:96%; height:250px;"></div>
+									<script src="../image/img_elias/sample1/sin/s225/after_etching/script.js"></script>
+									<script type="text/javascript">
+									draw2Graph(data, "chart_etch_1");
+									</script>
 								</div>
-								<div id="chart_etch_1" style="position:absolute; top:20px; left:2%; width:96%; height:250px;"></div>
-								<script src="../image/img_elias/sample1/circle/c220/after_etching/script.js"></script>
-								<script type="text/javascript">
-								draw2Graph(data, "chart_etch_1");
-								</script>
 							</div>
 							
-							<div style="position:absolute; top:270px; left:0px; height:270px; width:100%;">
-								<div style="position:absolute; top:0px; left:0px; height:20px; width:100%;">
-									<h4 style="text-align:center">300 nm period</h4>
+							<div style="position:absolute; top:300px; left:0px; height:540px; width:100%; border:2px solid black; border-radius: 10px;">
+								<div class="titlebox"><h4>Circular patterns</h4></div>
+								<div style="position:absolute; top:0px; left:0px; height:270px; width:100%;">
+									<div style="position:absolute; top:0px; left:0px; height:20px; width:100%;">
+										<h4 style="text-align:center">220 nm period</h4>
+									</div>
+									<div id="chart_etch_2" style="position:absolute; top:20px; left:2%; width:96%; height:250px;"></div>
+									<script src="../image/img_elias/sample1/circle/c220/after_etching/script.js"></script>
+									<script type="text/javascript">
+									draw2Graph(data, "chart_etch_2");
+									</script>
 								</div>
-								<div id="chart_etch_2" style="position:absolute; top:20px; left:2%; width:96%; height:250px;"></div>
-								<script src="../image/img_elias/sample1/circle/c300/after_etching/script.js"></script>
-								<script type="text/javascript">
-								drawGraph(data, "chart_etch_2");
-								</script>
-							</div>
-						</div>
-						
-						<div style="position:relative; top:30px; left:0px; height:540px; width:100%; border:2px solid black; border-radius: 10px;">
-							<div class="titlebox"><h4>Triangular patterns</h4></div>
-							<div style="position:absolute; top:0px; left:0px; height:320px; width:100%;">
-								<div style="position:absolute; top:0px; left:0px; height:20px; width:100%;">
-									<h4 style="text-align:center">200 nm period</h4>
+								
+								<div style="position:absolute; top:270px; left:0px; height:270px; width:100%;">
+									<div style="position:absolute; top:0px; left:0px; height:20px; width:100%;">
+										<h4 style="text-align:center">300 nm period</h4>
+									</div>
+									<div id="chart_etch_3" style="position:absolute; top:20px; left:2%; width:96%; height:250px;"></div>
+									<script src="../image/img_elias/sample1/circle/c300/after_etching/script.js"></script>
+									<script type="text/javascript">
+									drawGraph(data, "chart_etch_3");
+									</script>
 								</div>
-								<div id="chart_etch_3" style="position:absolute; top:20px; left:2%; width:96%; height:250px;"></div>
-								<script src="../image/img_elias/sample1/tri/t200/after_etching/script.js"></script>
-								<script type="text/javascript">
-								draw2Graph(data, "chart_etch_3");
-								</script>
 							</div>
 							
-							<div style="position:absolute; top:270px; left:0px; height:270px; width:100%;">
-								<div style="position:absolute; top:0px; left:0px; height:20px; width:100%;">
-									<h4 style="text-align:center">400 nm period</h4>
+							<div style="position:absolute; top:870px; left:0px; height:540px; width:100%; border:2px solid black; border-radius: 10px;">
+								<div class="titlebox"><h4>Triangular patterns</h4></div>
+								<div style="position:absolute; top:0px; left:0px; height:270px; width:100%;">
+									<div style="position:absolute; top:0px; left:0px; height:20px; width:100%;">
+										<h4 style="text-align:center">200 nm period</h4>
+									</div>
+									<div id="chart_etch_4" style="position:absolute; top:20px; left:2%; width:96%; height:250px;"></div>
+									<script src="../image/img_elias/sample1/tri/t200/after_etching/script.js"></script>
+									<script type="text/javascript">
+									draw2Graph(data, "chart_etch_4");
+									</script>
 								</div>
-								<div id="chart_etch_4" style="position:absolute; top:20px; left:2%; width:96%; height:250px;"></div>
-								<script src="../image/img_elias/sample1/tri/t400/after_etching/script.js"></script>
-								<script type="text/javascript">
-								draw2Graph(data, "chart_etch_4");
-								</script>
+								
+								<div style="position:absolute; top:270px; left:0px; height:270px; width:100%;">
+									<div style="position:absolute; top:0px; left:0px; height:20px; width:100%;">
+										<h4 style="text-align:center">400 nm period</h4>
+									</div>
+									<div id="chart_etch_5" style="position:absolute; top:20px; left:2%; width:96%; height:250px;"></div>
+									<script src="../image/img_elias/sample1/tri/t400/after_etching/script.js"></script>
+									<script type="text/javascript">
+									draw2Graph(data, "chart_etch_5");
+									</script>
+								</div>
 							</div>
 						</div>
-					</div>
-					
-					<h3 id="wetEtch" class="subsection" onclick="return toggleMe('wetEtch_display')"> Wet etching</h3>
-					<div id="wetEtch_display">
-						<p>
-							Todo
-						</p>
-					</div>
-					<h3 id="electrode" class="subsection" onclick="return toggleMe('electrode_display')"> Electrode deposition</h3>
-					<div id="electrode_display">
-						<p>
-							Todo
-						</p>
+						<h4>Comments :</h4>
+						<p>The plasma solution was supposed to etch more the SiO2 than the PPA, but the results show the inverse. The etch rate of the CHF3/SF6 plasma
+						into the PPA was extracted from the Yiulya article (I don't know how to write it haha) and seems to be false for our PPA layer. Then, we have to
+						look for another plasma solution if we want to increase the pattern amplitudes during the transfer into the SiO2 (maybe I can see that with the CMi staff ?).</p>
 					</div>
 				</div>
 			</div>
