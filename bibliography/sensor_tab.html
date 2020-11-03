@@ -26,6 +26,7 @@
 			{
 				font-weight: unset;
 				padding-right: 10px;
+				text-align: center;
 			}
 			
 			.titlebox{
@@ -58,12 +59,6 @@
 			.column1
 			{
 				width: 20%;
-				padding-left: 40px;
-				font-family: Lato-Bold;
-				font-size: 18px;
-				color: #fff;
-				line-height: 1.4;
-				background-color: #6c7ae0;
 			}
 
 			.column2
@@ -73,17 +68,17 @@
 
 			.column3
 			{
-				width: 22%;
+				width: 10%;
 			}
 
 			.column4
 			{
-				width: 19%;
+				width: 10%;
 			}
 
 			.column5
 			{
-				width: 13%;
+				width: 10%;
 			}
 
 			.table100-head th
@@ -153,7 +148,11 @@
 		</style>
 		<script type="text/javascript">
 			var idList = [];
+			idList[0] = "sensor_tab_display";
+			idList[1] = "sources_display";
 			var homePageIdNb = [];
+			homePageIdNb[0] = 0;
+			homePageIdNb[1] = 1;
 			
 			function toggleMe(a){
 				var e=document.getElementById(a);
@@ -199,21 +198,21 @@
 					<li class="separator"></li>
 					<li><strong>Bibliography search</strong></li>
 					<li><a href="#sensor_tab">2D sensors in literature</a></li>
+					<li><a href="#sources">Sources</a></li>
 				</ul>
 				<div class="docs-content">
 					<h2>Bibliography search</h2>
-					<p>
-						 Todo
-					</p>
-					<h3 id="sensor_tab" class="subsection" onclick="return toggleMe('sensor_tab_display')">2D sensors in literature</h3>
+					<h3 id="sensor_tab" class="subsection" onclick="return toggleMe('sensor_tab_display')">State of the art gas sensors</h3>
 					<div class="table100 ver1" id="sensor_tab_display">
 						<div class="table100-head">
 							<table>
 								<thead>
 									<tr>
-										<th class="column1">-</th>
-										<th class="column2">Substrate</th>
-										<th class="column3">Layer 1</th>
+										<th class="column1">Material</th>
+										<th class="column2">Sensor type</th>
+										<th class="column3">Gas analyte</th>
+										<th class="column4">Resolution</th>
+										<th class="column5">Ref</th>
 									</tr>
 								</thead>
 							</table>
@@ -222,18 +221,65 @@
 							<table>
 								<tbody>
 									<tr>
-										<td class="column1" style="color:#fff; font-size:18px; font-family:Lato-Bold; line-height:1.4">Material</td>
-										<td class="column2">Si + SiO2</td>
-										<td class="column3">PPA</td>
+										<td class="column1">Multilayer graphene (CVD)</td>
+										<td class="column2">Chemiresistor</td>
+										<td class="column3">NO2</td>
+										<td class="column4">1 ppm</td>
+										<td class="column5">1</td>
 									</tr>
 									<tr>
-										<td class="column1" style="color:#fff; font-size:18px; font-family:Lato-Bold; line-height:1.4">Thickness</td>
-										<td class="column2">SiO2 : 200 nm</td>
-										<td class="column3">100 nm</td>
+										<td class="column1">1 L graphene (ME)</td>
+										<td class="column2">Chemiresistor</td>
+										<td class="column3">NO2</td>
+										<td class="column4">100 ppb</td>
+										<td class="column5">2</td>
+									</tr>
+									<tr>
+										<td class="column1">1-2 L graphene (CVD)</td>
+										<td class="column2">Chemiresistor</td>
+										<td class="column3">NO2</td>
+										<td class="column4">100 ppb</td>
+										<td class="column5">3</td>
+									</tr>
+									<tr>
+										<td class="column1">1-2 L graphene (CVD)</td>
+										<td class="column2">Chemiresistor</td>
+										<td class="column3">NH3</td>
+										<td class="column4">500 ppb</td>
+										<td class="column5">3</td>
+									</tr>
+									<tr>
+										<td class="column1">hydrogenated graphene (CVD)</td>
+										<td class="column2">Chemiresistor</td>
+										<td class="column3">NO2</td>
+										<td class="column4">1 ppb</td>
+										<td class="column5">4</td>
+									</tr>
+									<tr>
+										<td class="column1">graphene (CVD) in situ cleaning with UV light</td>
+										<td class="column2">Chemiresistor</td>
+										<td class="column3">NO2</td>
+										<td class="column4">40 ppt</td>
+										<td class="column5">5</td>
 									</tr>
 								</tbody>
 							</table>
 						</div>
+					</div>
+					<legend>The resolution here is the smallest concentration of gas that the sensor detected during the experiments.</legend>
+					
+					<h3 id="sources" class="subsection" onclick="return toggleMe('sources_display')">Sources</h3>
+					<div id="sources_display">
+						<ul>
+							<li>(1) <a href="../sources/1.pdf">Choi et al, Flexible NO2 Gas Sensor Using Multilayer Graphene Films by Chemical 
+							Vapor Deposition. Carbon Lett. 2013, 14, 186−189</a>.</li>
+							<li>(2) <a href="../sources/2.pdf">Ricciardella et al, Effects of Graphene Defects on Gas Sensing Properties Towards NO2 Detection. 
+							Nanoscale 2017, 9, 6085−6093</a>.</li>
+							<li>(3) <a href="../sources/3.pdf">Yavari et al, High Sensitivity Detection of NO2 and NH3 in Air Using Chemical Vapor Deposition Grown Graphene. 
+							Appl. Phys. Lett. 2012, 100, 203120</a>.</li>
+							<li>(4) <a href="../sources/4.pdf">Park et al, NO2 gas sensor based on hydrogenated graphene. Appl. Phys. Lett. 2017, 111, 213102</a>.</li>
+							<li>(5) <a href="../sources/5.pdf">Chen et al, Sub-ppt gas detection with pristine graphene. Appl. Phys. Lett. 2012, 101, 053119</a>.</li>
+						</ul>
 					</div>
 				</div>
 			</div>
