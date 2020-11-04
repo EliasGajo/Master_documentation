@@ -203,82 +203,93 @@
 				<div class="docs-content">
 					<h2>Bibliography search</h2>
 					<h3 id="sensor_tab" class="subsection" onclick="return toggleMe('sensor_tab_display')">State of the art gas sensors</h3>
-					<div class="table100 ver1" id="sensor_tab_display">
-						<div class="table100-head">
-							<table>
-								<thead>
-									<tr>
-										<th class="column1">Material</th>
-										<th class="column2">Sensor type</th>
-										<th class="column3">Gas analyte</th>
-										<th class="column4">Resolution</th>
-										<th class="column5">Ref</th>
-									</tr>
-								</thead>
-							</table>
+					<div id="sensor_tab_display">
+						<div class="table100 ver1">
+							<div class="table100-head">
+								<table>
+									<thead>
+										<tr>
+											<th class="column1">Material</th>
+											<th class="column2">Sensor type</th>
+											<th class="column3">Gas analyte</th>
+											<th class="column4">Resolution</th>
+											<th class="column5">Ref</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+							<div class="table100-body">
+								<table>
+									<tbody>
+										<tr>
+											<td class="column1">Multilayer graphene (CVD)</td>
+											<td class="column2">Chemiresistor</td>
+											<td class="column3">NO<SUB>2</SUB></td>
+											<td class="column4">1 ppm</td>
+											<td class="column5">1</td>
+										</tr>
+										<tr>
+											<td class="column1">1 L graphene (ME)</td>
+											<td class="column2">Chemiresistor</td>
+											<td class="column3">NO<SUB>2</SUB></td>
+											<td class="column4">100 ppb</td>
+											<td class="column5">2</td>
+										</tr>
+										<tr>
+											<td class="column1">1-2 L graphene (CVD)</td>
+											<td class="column2">Chemiresistor</td>
+											<td class="column3">NO<SUB>2</SUB></td>
+											<td class="column4">100 ppb</td>
+											<td class="column5">3</td>
+										</tr>
+										<tr>
+											<td class="column1">1-2 L graphene (CVD)</td>
+											<td class="column2">Chemiresistor</td>
+											<td class="column3">NH<SUB>3</SUB></td>
+											<td class="column4">500 ppb</td>
+											<td class="column5">3</td>
+										</tr>
+										<tr>
+											<td class="column1">hydrogenated graphene (CVD)</td>
+											<td class="column2">Chemiresistor</td>
+											<td class="column3">NO<SUB>2</SUB></td>
+											<td class="column4">1 ppb</td>
+											<td class="column5">4</td>
+										</tr>
+										<tr>
+											<td class="column1">graphene (CVD) in situ cleaning with UV light</td>
+											<td class="column2">Chemiresistor</td>
+											<td class="column3">NO<SUB>2</SUB></td>
+											<td class="column4">40 ppt</td>
+											<td class="column5">5</td>
+										</tr>
+										<tr>
+											<td class="column1">few layers MoS<SUB>2</SUB></td>
+											<td class="column2">Chemiresistor</td>
+											<td class="column3">NO<SUB>2</SUB></td>
+											<td class="column4">5 ppm</td>
+											<td class="column5">6</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
-						<div class="table100-body">
-							<table>
-								<tbody>
-									<tr>
-										<td class="column1">Multilayer graphene (CVD)</td>
-										<td class="column2">Chemiresistor</td>
-										<td class="column3">NO2</td>
-										<td class="column4">1 ppm</td>
-										<td class="column5">1</td>
-									</tr>
-									<tr>
-										<td class="column1">1 L graphene (ME)</td>
-										<td class="column2">Chemiresistor</td>
-										<td class="column3">NO2</td>
-										<td class="column4">100 ppb</td>
-										<td class="column5">2</td>
-									</tr>
-									<tr>
-										<td class="column1">1-2 L graphene (CVD)</td>
-										<td class="column2">Chemiresistor</td>
-										<td class="column3">NO2</td>
-										<td class="column4">100 ppb</td>
-										<td class="column5">3</td>
-									</tr>
-									<tr>
-										<td class="column1">1-2 L graphene (CVD)</td>
-										<td class="column2">Chemiresistor</td>
-										<td class="column3">NH3</td>
-										<td class="column4">500 ppb</td>
-										<td class="column5">3</td>
-									</tr>
-									<tr>
-										<td class="column1">hydrogenated graphene (CVD)</td>
-										<td class="column2">Chemiresistor</td>
-										<td class="column3">NO2</td>
-										<td class="column4">1 ppb</td>
-										<td class="column5">4</td>
-									</tr>
-									<tr>
-										<td class="column1">graphene (CVD) in situ cleaning with UV light</td>
-										<td class="column2">Chemiresistor</td>
-										<td class="column3">NO2</td>
-										<td class="column4">40 ppt</td>
-										<td class="column5">5</td>
-									</tr>
-								</tbody>
-							</table>
-						</div>
+						<legend>The resolution here is the smallest concentration of gas that the sensor detected during the experiments.</legend>
 					</div>
-					<legend>The resolution here is the smallest concentration of gas that the sensor detected during the experiments.</legend>
 					
 					<h3 id="sources" class="subsection" onclick="return toggleMe('sources_display')">Sources</h3>
 					<div id="sources_display">
 						<ul>
-							<li>(1) <a href="../sources/1.pdf">Choi et al, Flexible NO2 Gas Sensor Using Multilayer Graphene Films by Chemical 
+							<li>(1) <a href="../sources/1.pdf">Choi et al, Flexible NO<SUB>2</SUB> Gas Sensor Using Multilayer Graphene Films by Chemical 
 							Vapor Deposition. Carbon Lett. 2013, 14, 186−189</a>.</li>
-							<li>(2) <a href="../sources/2.pdf">Ricciardella et al, Effects of Graphene Defects on Gas Sensing Properties Towards NO2 Detection. 
+							<li>(2) <a href="../sources/2.pdf">Ricciardella et al, Effects of Graphene Defects on Gas Sensing Properties Towards NO<SUB>2</SUB> Detection. 
 							Nanoscale 2017, 9, 6085−6093</a>.</li>
-							<li>(3) <a href="../sources/3.pdf">Yavari et al, High Sensitivity Detection of NO2 and NH3 in Air Using Chemical Vapor Deposition Grown Graphene. 
+							<li>(3) <a href="../sources/3.pdf">Yavari et al, High Sensitivity Detection of NO<SUB>2</SUB> and NH<SUB>3</SUB> in Air Using Chemical Vapor Deposition Grown Graphene. 
 							Appl. Phys. Lett. 2012, 100, 203120</a>.</li>
-							<li>(4) <a href="../sources/4.pdf">Park et al, NO2 gas sensor based on hydrogenated graphene. Appl. Phys. Lett. 2017, 111, 213102</a>.</li>
+							<li>(4) <a href="../sources/4.pdf">Park et al, NO<SUB>2</SUB> gas sensor based on hydrogenated graphene. Appl. Phys. Lett. 2017, 111, 213102</a>.</li>
 							<li>(5) <a href="../sources/5.pdf">Chen et al, Sub-ppt gas detection with pristine graphene. Appl. Phys. Lett. 2012, 101, 053119</a>.</li>
+							<li>(6) <a href="../sources/6.pdf">Wenli et al, Gas Sensors Based on Mechanically Exfoliated MoS<SUB>2</SUB> Nanosheets for Room-Temperature NO<SUB>2</SUB> Detection.
+							Sensors (Basel, Switzerland) vol. 19,9 2123. 2019, doi:10.3390/s19092123</a>.</li>
 						</ul>
 					</div>
 				</div>
