@@ -28,7 +28,11 @@
 				font-weight: unset;
 				padding-right: 10px;
 				text-align: center;
-				border: 1px solid black;
+			}
+			
+			tr
+			{
+				border:10px solid black;
 			}
 			
 			.titlebox{
@@ -60,39 +64,39 @@
 
 			.column1
 			{
-				width: 100px;
+				width: 170px;
 			}
 
 			.column2
 			{
-				width: 100px;
+				width: 90px;
 			}
 
 			.column3
 			{
-				width: 100px;
+				width: 90px;
 			}
 
 			.column4
 			{
-				width: 100px;
+				width: 90px;
 			}
 
 			.column5
 			{
-				width: 100px;
+				width: 90px;
 			}
 			.column6
 			{
-				width: 100px;
+				width: 90px;
 			}
 			.column7
 			{
-				width: 100px;
+				width: 140px;
 			}
 			.column8
 			{
-				width: 100px;
+				width: 40px;
 			}
 
 			.table100-head th
@@ -128,6 +132,15 @@
 				max-width: 100%;
 				overflow-y: auto;
 			}
+			
+			.styled-table tbody tr:nth-of-type(even) {
+				background-color: #f3f3f3;
+			}
+			
+			.styled-table tbody tr:hover {
+				font-weight: bold;
+				color: #009879;
+			}
 
 			.table100.ver1 th
 			{
@@ -153,7 +166,6 @@
 
 			.table100.ver1
 			{
-				border-radius: 10px;
 				box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
 				-moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
 				-webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
@@ -227,7 +239,7 @@
 						<!-- style="border:3px solid black;overflow-x:auto;white-space: nowrap;"-->
 						<div>
 							<div class="table100 ver1">
-								<div class="table100-head" id="header_table" style="width:900px;">
+								<div class="table100-head" id="header_table" style="width:820px;">
 									<table style="width:800px; padding-right:20px;">
 										<thead>
 											<tr>
@@ -243,78 +255,78 @@
 										</thead>
 									</table>
 								</div>
-								<div class="table100-body" id="body_table" onscroll="scrollPos();" style="width:900px;">
-									<table style="width:800px; padding-right:0px;">
+								<div class="table100-body" id="body_table" onscroll="scrollPos();" style="width:820px;">
+									<table style="width:800px; padding-right:0px;" class="styled-table">
 										<tbody>
 											<tr>
 												<td class="column1">Multilayer graphene (CVD)</td>
 												<td class="column2">Chemiresistor</td>
 												<td class="column3">NO<SUB>2</SUB></td>
 												<td class="column4">1 ppm</td>
-												<td class="column5"></td>
-												<td class="column6"></td>
-												<td class="column7"></td>
-												<td class="column8">1</td>
+												<td class="column5">-</td>
+												<td class="column6">-</td>
+												<td class="column7">-</td>
+												<td class="column8"><a href="../sources/1.pdf">1</a></td>
 											</tr>
 											<tr>
 												<td class="column1">1 L graphene (ME)</td>
 												<td class="column2">Chemiresistor</td>
 												<td class="column3">NO<SUB>2</SUB></td>
 												<td class="column4">100 ppb</td>
-												<td class="column5"></td>
-												<td class="column6"></td>
-												<td class="column7"></td>
-												<td class="column8">2</td>
+												<td class="column5">-</td>
+												<td class="column6">-</td>
+												<td class="column7">-</td>
+												<td class="column8"><a href="../sources/2.pdf">2</a></td>
 											</tr>
 											<tr>
 												<td class="column1">1-2 L graphene (CVD)</td>
 												<td class="column2">Chemiresistor</td>
 												<td class="column3">NO<SUB>2</SUB></td>
 												<td class="column4">100 ppb</td>
-												<td class="column5"></td>
-												<td class="column6"></td>
-												<td class="column7"></td>
-												<td class="column8">3</td>
+												<td class="column5">-</td>
+												<td class="column6">-</td>
+												<td class="column7">-</td>
+												<td class="column8"><a href="../sources/3.pdf">3</a></td>
 											</tr>
 											<tr>
 												<td class="column1">1-2 L graphene (CVD)</td>
 												<td class="column2">Chemiresistor</td>
 												<td class="column3">NH<SUB>3</SUB></td>
 												<td class="column4">500 ppb</td>
-												<td class="column5"></td>
-												<td class="column6"></td>
-												<td class="column7"></td>
-												<td class="column8">3</td>
+												<td class="column5">-</td>
+												<td class="column6">-</td>
+												<td class="column7">-</td>
+												<td class="column8"><a href="../sources/3.pdf">3</a></td>
 											</tr>
 											<tr>
 												<td class="column1">hydrogenated graphene (CVD)</td>
 												<td class="column2">Chemiresistor</td>
 												<td class="column3">NO<SUB>2</SUB></td>
 												<td class="column4">1 ppb</td>
-												<td class="column5"></td>
-												<td class="column6"></td>
-												<td class="column7"></td>
-												<td class="column8">4</td>
+												<td class="column5">-</td>
+												<td class="column6">-</td>
+												<td class="column7">-</td>
+												<td class="column8"><a href="../sources/4.pdf">4</a></td>
 											</tr>
 											<tr>
 												<td class="column1">graphene (CVD) in situ cleaning with UV light</td>
 												<td class="column2">Chemiresistor</td>
 												<td class="column3">NO<SUB>2</SUB></td>
 												<td class="column4">40 ppt</td>
-												<td class="column5"></td>
-												<td class="column6"></td>
-												<td class="column7"></td>
-												<td class="column8">5</td>
+												<td class="column5">-</td>
+												<td class="column6">-</td>
+												<td class="column7">-</td>
+												<td class="column8"><a href="../sources/5.pdf">5</a></td>
 											</tr>
 											<tr>
 												<td class="column1">few layers MoS<SUB>2</SUB> (ME)</td>
 												<td class="column2">Chemiresistor</td>
 												<td class="column3">NO<SUB>2</SUB></td>
 												<td class="column4">5 ppm</td>
-												<td class="column5"></td>
-												<td class="column6"></td>
-												<td class="column7"></td>
-												<td class="column8">6</td>
+												<td class="column5">-</td>
+												<td class="column6">-</td>
+												<td class="column7">-</td>
+												<td class="column8"><a href="../sources/6.pdf">6</a></td>
 											</tr>
 										</tbody>
 									</table>
