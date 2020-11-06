@@ -16,10 +16,11 @@
 			{
 				background-color: #fff;
 			}
-
+			
 			table
 			{
 				width: 100%;
+				table-layout: fixed;
 			}
 
 			th, td
@@ -27,6 +28,7 @@
 				font-weight: unset;
 				padding-right: 10px;
 				text-align: center;
+				border: 1px solid black;
 			}
 			
 			.titlebox{
@@ -58,27 +60,39 @@
 
 			.column1
 			{
-				width: 20%;
+				width: 100px;
 			}
 
 			.column2
 			{
-				width: 13%;
+				width: 100px;
 			}
 
 			.column3
 			{
-				width: 10%;
+				width: 100px;
 			}
 
 			.column4
 			{
-				width: 10%;
+				width: 100px;
 			}
 
 			.column5
 			{
-				width: 10%;
+				width: 100px;
+			}
+			.column6
+			{
+				width: 100px;
+			}
+			.column7
+			{
+				width: 100px;
+			}
+			.column8
+			{
+				width: 100px;
 			}
 
 			.table100-head th
@@ -102,15 +116,17 @@
 			.table100-head
 			{
 				position: absolute;
-				width: 100%;
+				max-width: 100%;
+				overflow-x: hidden;
 				top: 0;
 				left: 0;
 			}
 
 			.table100-body
 			{
-				max-height: 585px;
-				overflow: auto;
+				max-height: 400px;
+				max-width: 100%;
+				overflow-y: auto;
 			}
 
 			.table100.ver1 th
@@ -138,7 +154,6 @@
 			.table100.ver1
 			{
 				border-radius: 10px;
-				overflow: hidden;
 				box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
 				-moz-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
 				-webkit-box-shadow: 0 0px 40px 0px rgba(0, 0, 0, 0.15);
@@ -183,6 +198,11 @@
 			function goToPage(pagePath){
 				window.location= pagePath;
 			}
+			
+			function scrollPos(){
+				var rightScrollPos = document.getElementById("body_table").scrollLeft;
+				document.getElementById("header_table").scrollLeft = rightScrollPos; 
+			}
 		</script>
 	</head>
 	<body onload="homePageInit()">
@@ -204,74 +224,101 @@
 					<h2>Bibliography search</h2>
 					<h3 id="sensor_tab" class="subsection" onclick="return toggleMe('sensor_tab_display')">State of the art gas sensors</h3>
 					<div id="sensor_tab_display">
-						<div class="table100 ver1">
-							<div class="table100-head">
-								<table>
-									<thead>
-										<tr>
-											<th class="column1">Material</th>
-											<th class="column2">Sensor type</th>
-											<th class="column3">Gas analyte</th>
-											<th class="column4">Resolution</th>
-											<th class="column5">Ref</th>
-										</tr>
-									</thead>
-								</table>
-							</div>
-							<div class="table100-body">
-								<table>
-									<tbody>
-										<tr>
-											<td class="column1">Multilayer graphene (CVD)</td>
-											<td class="column2">Chemiresistor</td>
-											<td class="column3">NO<SUB>2</SUB></td>
-											<td class="column4">1 ppm</td>
-											<td class="column5">1</td>
-										</tr>
-										<tr>
-											<td class="column1">1 L graphene (ME)</td>
-											<td class="column2">Chemiresistor</td>
-											<td class="column3">NO<SUB>2</SUB></td>
-											<td class="column4">100 ppb</td>
-											<td class="column5">2</td>
-										</tr>
-										<tr>
-											<td class="column1">1-2 L graphene (CVD)</td>
-											<td class="column2">Chemiresistor</td>
-											<td class="column3">NO<SUB>2</SUB></td>
-											<td class="column4">100 ppb</td>
-											<td class="column5">3</td>
-										</tr>
-										<tr>
-											<td class="column1">1-2 L graphene (CVD)</td>
-											<td class="column2">Chemiresistor</td>
-											<td class="column3">NH<SUB>3</SUB></td>
-											<td class="column4">500 ppb</td>
-											<td class="column5">3</td>
-										</tr>
-										<tr>
-											<td class="column1">hydrogenated graphene (CVD)</td>
-											<td class="column2">Chemiresistor</td>
-											<td class="column3">NO<SUB>2</SUB></td>
-											<td class="column4">1 ppb</td>
-											<td class="column5">4</td>
-										</tr>
-										<tr>
-											<td class="column1">graphene (CVD) in situ cleaning with UV light</td>
-											<td class="column2">Chemiresistor</td>
-											<td class="column3">NO<SUB>2</SUB></td>
-											<td class="column4">40 ppt</td>
-											<td class="column5">5</td>
-										</tr>
-										<tr>
-											<td class="column1">few layers MoS<SUB>2</SUB></td>
-											<td class="column2">Chemiresistor</td>
-											<td class="column3">NO<SUB>2</SUB></td>
-											<td class="column4">5 ppm</td>
-											<td class="column5">6</td>
-										</tr>
-									</tbody>
-								</table>
+						<!-- style="border:3px solid black;overflow-x:auto;white-space: nowrap;"-->
+						<div>
+							<div class="table100 ver1">
+								<div class="table100-head" id="header_table" style="width:900px;">
+									<table style="width:800px; padding-right:20px;">
+										<thead>
+											<tr>
+												<th class="column1">Material</th>
+												<th class="column2">Sensor type</th>
+												<th class="column3">Gas analyte</th>
+												<th class="column4">Resolution</th>
+												<th class="column5">Sensitivity</th>
+												<th class="column6">Selectivity</th>
+												<th class="column7">Recovery time</th>
+												<th class="column8">Ref</th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+								<div class="table100-body" id="body_table" onscroll="scrollPos();" style="width:900px;">
+									<table style="width:800px; padding-right:0px;">
+										<tbody>
+											<tr>
+												<td class="column1">Multilayer graphene (CVD)</td>
+												<td class="column2">Chemiresistor</td>
+												<td class="column3">NO<SUB>2</SUB></td>
+												<td class="column4">1 ppm</td>
+												<td class="column5"></td>
+												<td class="column6"></td>
+												<td class="column7"></td>
+												<td class="column8">1</td>
+											</tr>
+											<tr>
+												<td class="column1">1 L graphene (ME)</td>
+												<td class="column2">Chemiresistor</td>
+												<td class="column3">NO<SUB>2</SUB></td>
+												<td class="column4">100 ppb</td>
+												<td class="column5"></td>
+												<td class="column6"></td>
+												<td class="column7"></td>
+												<td class="column8">2</td>
+											</tr>
+											<tr>
+												<td class="column1">1-2 L graphene (CVD)</td>
+												<td class="column2">Chemiresistor</td>
+												<td class="column3">NO<SUB>2</SUB></td>
+												<td class="column4">100 ppb</td>
+												<td class="column5"></td>
+												<td class="column6"></td>
+												<td class="column7"></td>
+												<td class="column8">3</td>
+											</tr>
+											<tr>
+												<td class="column1">1-2 L graphene (CVD)</td>
+												<td class="column2">Chemiresistor</td>
+												<td class="column3">NH<SUB>3</SUB></td>
+												<td class="column4">500 ppb</td>
+												<td class="column5"></td>
+												<td class="column6"></td>
+												<td class="column7"></td>
+												<td class="column8">3</td>
+											</tr>
+											<tr>
+												<td class="column1">hydrogenated graphene (CVD)</td>
+												<td class="column2">Chemiresistor</td>
+												<td class="column3">NO<SUB>2</SUB></td>
+												<td class="column4">1 ppb</td>
+												<td class="column5"></td>
+												<td class="column6"></td>
+												<td class="column7"></td>
+												<td class="column8">4</td>
+											</tr>
+											<tr>
+												<td class="column1">graphene (CVD) in situ cleaning with UV light</td>
+												<td class="column2">Chemiresistor</td>
+												<td class="column3">NO<SUB>2</SUB></td>
+												<td class="column4">40 ppt</td>
+												<td class="column5"></td>
+												<td class="column6"></td>
+												<td class="column7"></td>
+												<td class="column8">5</td>
+											</tr>
+											<tr>
+												<td class="column1">few layers MoS<SUB>2</SUB> (ME)</td>
+												<td class="column2">Chemiresistor</td>
+												<td class="column3">NO<SUB>2</SUB></td>
+												<td class="column4">5 ppm</td>
+												<td class="column5"></td>
+												<td class="column6"></td>
+												<td class="column7"></td>
+												<td class="column8">6</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
 							</div>
 						</div>
 						<legend>The resolution here is the smallest concentration of gas that the sensor detected during the experiments.</legend>
