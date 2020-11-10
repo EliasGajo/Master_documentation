@@ -155,7 +155,8 @@
 			var idList = [];
 			idList[0] = "compo_display";
 			idList[1] = "prepa_display";
-			idList[2] = "PPA_display";
+			idList[2] = "transf_display";
+			idList[3] = "PPA_display";
 			var homePageIdNb = [];
 			homePageIdNb[0] = 0;
 			
@@ -317,9 +318,10 @@
 				<ul class="docs-nav" id="menu-left">
 					<li><a href="../experiments.html"><strong>Home page</strong></a></li>
 					<li class="separator"></li>
-					<li><strong>Sample 2</strong></li>
+					<li><strong>E2</strong></li>
 					<li><a href="#compo">Composition before patterning</a></li>
 					<li><a href="#prepa">Substrate preparation</a></li>
+					<li><a href="#transf">MoS<SUB>2</SUB> flakes transfer</a></li>
 					<li><a href="#PPA">PPA spin coating</a></li>
 				</ul>
 				<div class="docs-content">
@@ -347,14 +349,11 @@
 						Click on a sample to show the details
 					</legend>
 					<hr>
-					<h2>Sample 2</h2>
+					<h2>E2</h2>
 					<p>
-						 This chip will contain some of the final gas sensors. The fabrication contains 3 main steps : 
-						 <ul>
-							<li>Pattern different shapes with the NanoFrazor and transfer these patterns into the SiO2 layer as best as possible.</li>
-							<li>2D material transfer onto the best patterns.</li>
-							<li>Electrodes deposition.</li>
-						 </ul>
+						 This chip contains some exfoliated flakes of MoS<SUB>2</SUB>. These flakes have been transferred onto a Si + SiO<SUB>2</SUB> substrate
+						 without any patterns. Then the aim of this sample (as well as E1, E3, and E4) is to define and isolate the active regions of our 2D material. We will also use the successful
+						 active regions to fabricate a plane surface gas sensor.
 					</p>
 					<h3 id="compo" class="subsection" onclick="return toggleMe('compo_display')"> Composition before patterning</h3>
 					<div class="table100 ver1" id="compo_display">
@@ -387,12 +386,19 @@
 						</div>
 					</div>
 					<h3 id="prepa" class="subsection" onclick="return toggleMe('prepa_display')"> Substrate preparation</h3>
-					<ul id="prepa_display">
-						<li>Diced part of a wafer of Si + 200 nm SiO2</li>
-						<li>Cleaned in acetone during 5 minutes</li>
-						<li>Cleaned in isopropanole during 5 minutes</li>
-						<li>Dried with a N2 gun</li>
-					</ul>
+					<div id="prepa_display">
+						<ul>
+							<li>Diced part of a wafer of Si + 200 nm SiO2</li>
+							<li>Cleaned in acetone during 5 minutes</li>
+							<li>Cleaned in isopropanole during 5 minutes</li>
+							<li>Dried with a N2 gun</li>
+						</ul>
+					</div>
+					
+					<h3 id="transf" class="subsection" onclick="return toggleMe('transf_display')"> MoS<SUB>2</SUB> flakes transfer</h3>
+					<div id="transf_display">
+						<p>Todo</p>
+					</div>
 				
 					<h3 id="PPA" class="subsection" onclick="return toggleMe('PPA_display')"> PPA spin coating</h3>
 					<div id="PPA_display">
