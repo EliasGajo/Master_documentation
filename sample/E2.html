@@ -156,7 +156,9 @@
 			idList[0] = "compo_display";
 			idList[1] = "prepa_display";
 			idList[2] = "transf_display";
-			idList[3] = "PPA_display";
+			idList[3] = "flakes_display";
+			idList[4] = "PPA_display";
+			idList[5] = "pattern_display";
 			var homePageIdNb = [];
 			homePageIdNb[0] = 0;
 			
@@ -322,7 +324,9 @@
 					<li><a href="#compo">Composition before patterning</a></li>
 					<li><a href="#prepa">Substrate preparation</a></li>
 					<li><a href="#transf">MoS<SUB>2</SUB> flakes transfer</a></li>
+					<li><a href="#flakes">Interesting regions</a></li>
 					<li><a href="#PPA">PPA spin coating</a></li>
+					<li><a href="#pattern">PPA patterning</a></li>
 				</ul>
 				<div class="docs-content">
 					<h2>Presentation of the chips</h2>
@@ -352,7 +356,7 @@
 					<h2>E2</h2>
 					<p>
 						 This chip contains some exfoliated flakes of MoS<SUB>2</SUB>. These flakes have been transferred onto a Si + SiO<SUB>2</SUB> substrate
-						 without any patterns. Then the aim of this sample (as well as E1, E3, and E4) is to define and isolate the active regions of our 2D material. We will also use the successful
+						 without any patterns. Then the aim of this sample (as well as <a href="E1.html">E1</a>, <a href="E3.html">E3</a>, and <a href="E4.html">E4</a>) is to define and isolate the active regions of our 2D material. We will also use the successful
 						 active regions to fabricate a plane surface gas sensor.
 					</p>
 					<h3 id="compo" class="subsection" onclick="return toggleMe('compo_display')"> Composition before patterning</h3>
@@ -373,12 +377,12 @@
 								<tbody>
 									<tr>
 										<td class="column1" style="color:#fff; font-size:18px; font-family:Lato-Bold; line-height:1.4">Material</td>
-										<td class="column2">Si + SiO2</td>
+										<td class="column2">Si + SiO<SUB>2</SUB></td>
 										<td class="column3">PPA</td>
 									</tr>
 									<tr>
 										<td class="column1" style="color:#fff; font-size:18px; font-family:Lato-Bold; line-height:1.4">Thickness</td>
-										<td class="column2">SiO2 : 200 nm</td>
+										<td class="column2">SiO<SUB>2</SUB> : 200 nm</td>
 										<td class="column3">100 nm</td>
 									</tr>
 								</tbody>
@@ -388,7 +392,7 @@
 					<h3 id="prepa" class="subsection" onclick="return toggleMe('prepa_display')"> Substrate preparation</h3>
 					<div id="prepa_display">
 						<ul>
-							<li>Diced part of a wafer of Si + 200 nm SiO2</li>
+							<li>Diced part of a wafer of Si + 200 nm SiO<SUB>2</SUB></li>
 							<li>Cleaned in acetone during 5 minutes</li>
 							<li>Cleaned in isopropanole during 5 minutes</li>
 							<li>Dried with a N2 gun</li>
@@ -399,7 +403,22 @@
 					<div id="transf_display">
 						<p>Todo</p>
 					</div>
-				
+					
+					<h3 id="flakes" class="subsection" onclick="return toggleMe('flakes_display')"> Interesting regions</h3>
+					<div id="flakes_display">
+						<p>
+							Here are the interesting regions of this chip (the regions where we transferred very thin layers of MoS<SUB>2</SUB>) :
+						</p>
+						<div style="position:relative; top:0px; left:0px;width:100%; height:330px;">
+							<div style="position:absolute; top:0px; left:0px; width:100%; height:300px;">
+								<img src="../image/img_elias/E2/flake1/after.png" style="position:absolute; top:0px; left:20%; max-width:60%; max-height:300px;"></img>
+								<legend style="position:absolute; top:300px; left; 0px; width:100%; max-height:30px; text-align:center">
+									Region 1
+								</legend>
+							</div>
+						</div>
+					</div>
+					
 					<h3 id="PPA" class="subsection" onclick="return toggleMe('PPA_display')"> PPA spin coating</h3>
 					<div id="PPA_display">
 						<p>
@@ -415,6 +434,13 @@
 							Total thickness of the layer : 100 nm
 							<br>
 							Thickness measured : No
+						</p>
+					</div>
+					
+					<h3 id="pattern" class="subsection" onclick="return toggleMe('pattern_display')"> PPA patterning</h3>
+					<div id="pattern_display">
+						<p>
+							Todo
 						</p>
 					</div>
 				</div>
